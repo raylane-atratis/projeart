@@ -571,5 +571,22 @@ function enqueue_custom_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
+add_filter('wpcf7_validate_select', 'validar_prefeitura_condicional', 20, 2);
+add_filter('wpcf7_validate_select*', 'validar_prefeitura_condicional', 20, 2);
 
+function validar_prefeitura_condicional($result, $tag) {
+    $tag_name = $tag->name;
+
+    if ($tag_name === 'motivo') {
+        $is_servidor = isset($_POST['certificado-obito']) ? $_POST['certificado-obito'] : '';
+        $prefeitura = isset($_POST['prefeitura']) ? trim($_POST['prefeitura']) : '';
+
+        if ($is_servidor === 'Óbitos (anexar certidão de óbito do paciente)' && ($prefeitura === '' || $prefeitura === '–– Escolha sua prefeitura ––')) {
+            $result->invalidate($tag, "Por favor, adicione um arquivo.");
+        }
+    }
+
+    return $result;
+}
 ?>
+

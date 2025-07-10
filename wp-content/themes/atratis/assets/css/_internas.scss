@@ -1,5 +1,5 @@
 .breadcrumb-personalizada {
-    padding: 16px 0;
+    padding: 10px 0;
     width: 100%;
     display: flex;
     align-items: center;
@@ -28,10 +28,11 @@
     border-top: 1px solid #CAD1EB;
 
     h1 {
-        font-size: 34px;
-        font-weight: 700;
-        line-height: 40px;
-        text-align: left;
+        font-weight: 900;
+        font-size: 40px;
+        line-height: 55px;
+        letter-spacing: 0%;
+
         color: $preto;
     }
 }
@@ -130,12 +131,15 @@
         
         .item {
             margin-bottom: 50px;
+            border-radius: 20px;
+            border: 1px solid #D7D7D7;
+            padding: 13px;
 
             .content-card {
                 display: block;
                 
                 border-radius: 20px;
-                max-width: 378px;
+                /* max-width: 378px; */
                 text-decoration: none;
         
                 &:hover {
@@ -171,8 +175,8 @@
                     padding: 20px 13px 15px;
                     h3 {
          
-                        font-size: 24px;
-                        font-weight: 700;
+                        font-size: 26px;
+                        font-weight: 800;
                         line-height: 33px;
                         text-align: left;
             
@@ -189,9 +193,8 @@
                     }
         
                     small {
-                        font-family: 'Sora';
                         font-size: 15px;
-                        font-weight: 400;
+                        font-weight: 700;
                         line-height: 29px;
                         text-align: left;
                         color: $primary;
@@ -300,7 +303,7 @@ aside {
 }
 
 .form-newsletter {
-    background: $tertiary;
+    background: linear-gradient(90.23deg, #00AEEE 0.2%, #013E7E 58.18%, #012D6C 103.57%);
     padding: 27px 33px;
 
     border: 1px solid #C9C9C9;
@@ -310,7 +313,7 @@ aside {
     h3 {
         color: $branco;
         font-size: 20px;
-        font-weight: 700;
+        font-weight: 900;
         line-height: 31px;
         text-align: left;
 
@@ -333,10 +336,10 @@ aside {
             padding: 7px;
 
             background: $primary;
-            color: #fff;
+            color: #000;
             transition: 0.3s ease-in-out;
             border: 0;
-            font-weight: 700;
+            font-weight: 900;
             &:hover {
                 background: $branco !important;
                 color: $primary !important;
@@ -407,188 +410,109 @@ aside {
     padding: 60px 0;
 
     .content-card {
-        display: block;
-        padding: 16px;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        border-radius: 20px;
-        max-width: 378px;
-        text-decoration: none;
+            overflow: hidden;
+            display: block;
+            width: 100%;
+            height: 508px;
+            border-radius: 20px;
+            position: relative;
+            transition: all .5s ease-in-out;
+            box-shadow: 0px 0px 18.24px 0px #0000001A;
 
-        &:hover {
-            .img {
+
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0) 80%);;
+
+                  
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                
+            }
+            
+            img {
+                border-radius: 20px;
+                height: 508px;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+
+                transition: all .5s ease-in-out;
+                
+
+                
+            }
+
+            .content-text {
+                position: absolute;
+                z-index: 3;
+                top: 0;
+                left: 0;
+                height: 508px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                padding:  15px 20px;
+
+                h3 {
+                    color: #FEF7EA;
+                    font-weight: 700;
+                    font-size: 31px;
+                    line-height: 31px;
+                    letter-spacing: 0%;
+                    text-align: center;
+
+                    margin-bottom: 30px;
+
+                }
+
+                .btn-post {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 15px;
+                    font-size: 15px;
+                    color: $branco;
+                    margin-bottom: 30px;
+                }
+            }
+
+            &:hover {
                 img {
                     transform: scale(1.1);
                 }
-            }
-
-            .content-title {
-                small {
-                    text-decoration: underline;
-                    
-                }
+            
             }
         }
-
-        .img {
-            position: relative;
-            display: block;
-            overflow: hidden;
-            border-radius: 20px;
-           
-
-            img {
-                width: 100%;
-                transition: 0.5s ease-in-out;
-                
-            }
-        }
-
-        .content-title {
-            padding: 20px 13px 15px;
-            h3 {
- 
-                font-size: 24px;
-                font-weight: 700;
-                line-height: 33px;
-                text-align: left;
-    
-            }
-
-            p{
-    
-                font-size: 15px;
-                font-weight: 400;
-                line-height: 29px;
-                text-align: left;
-                color: #6F7485;
-                margin-bottom: 19px;
-            }
-
-            small {
-                font-family: 'Sora';
-                font-size: 15px;
-                font-weight: 400;
-                line-height: 29px;
-                text-align: left;
-                color: $primary;
-
-            }
-        }
-
-    }
-
    
 }
 
-.grid-arquivo-produtos {
+.grid-arquivo-clients {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 40px;
-    row-gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(164px, 1fr));
+    gap: 30px;
+
+
     padding: 60px 0;
 
-
-
-
     .content-card {
-        background: #FAFAFB;
-        border-radius: 12px;
-        border: 1px solid #CBCBCB;
-        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        &:hover {
-            .img {
-                img {
-                    transform: scale(1.1);
-                }
-            }
-
-            .content-title {
-                small {
-                    text-decoration: underline;
-                    
-                }
-            }
-        }
-
-        .img {
-            position: relative;
-            display: block;
-            overflow: hidden;
-            border-radius:  10px 10px 0 0;
-           
-
-            img {
-                width: 100%;
-                transition: 0.5s ease-in-out;
-                
-            }
-        }
-
-        .content-title {
-            padding: 23px 30px 37px;
-
-            h3 {
-                color: #3D3D46;
-                font-size: 24px;
-                font-weight: 700;
-                line-height: 33px;
-                text-align: left;
-
-            }
-
-            p {
-                color: #000;
-                font-size: 15px;
-                font-weight: 400;
-                line-height: 29px;
-                text-align: left;
-                margin-bottom: 7px;
-            }
-
-            .price {
-                span {
-
-                    font-family: 'Sora';
-                    font-size: 18px;
-                    font-weight: 700;
-                    line-height: 33px;
-                    text-align: left;
-
-
-                }
-
-                h3 {
-                    color: $primary;
-                    font-size: 30px;
-                    font-weight: 800;
-                    line-height: 40px;
-                    text-align: left;
-
-                }
-            }
-
-            small {
-                background: $primary;
-                color: $branco;
-                padding: 12px 35px;
-                margin-top: 16px;
-                display: block;
-                width: fit-content;
-                border-radius: 6px;
-                transition: 0.5s ease-in-out;
-
-                font-family: 'Sora';
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 29px;
-                text-align: left;
-
-
-                &:hover {
-                    background: $tertiary;
-                    
-                }
+        img {
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            &:hover {
+                transform: scale(1.1);
             }
         }
     }
@@ -682,8 +606,8 @@ aside {
 
 .formulario{
 
-        background: $secondary;
-        border-radius: 15px 0px 15px 15px;
+        background: #012D6C;
+        border-radius: 15px;
 
         
 
@@ -756,6 +680,7 @@ aside {
         }
     
         .form-group {
+            margin-bottom: 20px;
             label {
                 
                 color: $branco;
@@ -1218,4 +1143,8 @@ iframe {
         border-radius: 28px;
         margin-top: 18px;
     }
+}
+
+ul.wp-block-list li {
+    color: $fontCorTexto;
 }

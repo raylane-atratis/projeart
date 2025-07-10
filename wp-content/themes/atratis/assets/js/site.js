@@ -115,7 +115,7 @@ jQuery('.owl-carousel-mobile').owlCarousel({
 });
 
 jQuery('.owl-solucoes').owlCarousel({
-  loop:true,
+  loop:false,
   margin:20,
   dots: true,
   margin: 30,
@@ -125,10 +125,32 @@ jQuery('.owl-solucoes').owlCarousel({
           items: 1
       },
       600: {
-          items: 2
+          items: 1
       },
       1000: {
+          items: 2
+      }
+  }
+});
+
+jQuery('.owl-clients').owlCarousel({
+  loop:true,
+  margin:20,
+  dots: true,
+  margin: 30,
+  nav:false,
+  autoplay:true,
+  autoplayTimeout:1500,
+  autoplayHoverPause:false,
+  responsive: {
+      0: {
+          items: 2
+      },
+      600: {
           items: 3
+      },
+      1000: {
+          items: 6
       }
   }
 });
@@ -228,10 +250,10 @@ jQuery('.owl-blog ').owlCarousel({
           items: 1
       },
       600: {
-          items: 1
+          items: 2
       },
       1000: {
-          items: 2
+          items: 3
       }
   }
 });
@@ -295,10 +317,10 @@ jQuery('.owl-solucoes').owlCarousel({
 });
 
 jQuery('.owl-depoimentos').owlCarousel({
-  loop:true,
+  loop:false,
   margin:0,
   dots: true,
-  margin: 10,
+  margin: 20,
   nav:false,
   responsive: {
       0: {
@@ -308,12 +330,28 @@ jQuery('.owl-depoimentos').owlCarousel({
           items: 2
       },
       1000: {
-          items: 2
+          items: 3
       }
   }
 });
 
-
+jQuery('.owl-galeria-carrosel').owlCarousel({
+  loop:false,
+  dots: true,
+  margin: 20,
+  nav:false,
+  responsive: {
+      0: {
+          items: 1
+      },
+      600: {
+          items: 2
+      },
+      1000: {
+          items: 3
+      }
+  }
+});
 
 
 

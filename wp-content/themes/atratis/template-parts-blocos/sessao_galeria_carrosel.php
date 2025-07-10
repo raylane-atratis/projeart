@@ -67,31 +67,30 @@ if($animI == 0):
 
     
     <div class="container">
-        <div class="row row-reverse" >
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <h2 style="text-align: center; font-weight: 700;font-size: 38px;line-height: 45px;letter-spacing: 0;max-width: 354px;"><?php echo $titulo; ?></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
 
-            <div class="col-lg-7">
+            <div class="col-lg-12">
                 <div class="conteiner-carrosel">
                     <div class="owl-galeria-carrosel owl-carousel owl-theme">
-                    <?php foreach($lista_imagens as $item): ?>
-                        <div class="item-galeria">
-                            <img src="<?php echo $item['imagem']['url'];?>" alt="<?php echo $item['imagem']['alt'];?>">
-                        </div>
-                    <?php endforeach; ?>
+                    
+                        <?php foreach($lista_imagens as $item_img): ?>
+                            <a class="item-galeria " href="<?php echo $item_img['imagem']['url'];?>" data-fancybox="gallery">
+                                <img src="<?php echo $item_img['imagem']['url'];?>" alt="<?php echo $item_img['imagem_item']['alt'];?>">
+                            </a>
+                        <?php endforeach; ?>
+                        
                     </div>
                 </div>
                 
             </div>
 
-            <div class="col-lg-5 full-bloco" >
-                <div class="title" data-aos='fade-left' data-aos-duration='1000'>
-                    <h2><?php echo $titulo; ?></h2>
-                    <p><?php echo $descricao; ?></p>
-                    <a href="<?php echo $link_do_cta; ?>" class="btn-padrao"><?php echo $texto_do_cta; ?></a>
-                </div>
-            </div>
-
-
-            
         </div> 
 
 

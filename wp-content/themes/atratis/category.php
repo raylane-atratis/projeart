@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1>Blog</h1>
+                        <h1>News</h1>
                     </div>
                  </div>
             </div>
@@ -49,7 +49,7 @@
                                         ?>
                                         
                                         <p><?php echo esc_html($the_excerpt); ?></p>
-                                        <small>Saiba Mais</small>
+                                        <small>Learn More</small>
                                     </div>
                                 </a>
                                     
