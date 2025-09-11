@@ -18,7 +18,12 @@ $texto_do_cta = get_sub_field('texto_do_cta');
 
 $titulo = get_sub_field('titulo');
 $subtitulo = get_sub_field('subtitulo');
-$listaBeneficios = get_sub_field('lista_beneficios');
+$lista_cards = get_sub_field('lista_cards');
+
+$titulo_card_cta = get_sub_field('titulo_card_cta');
+$texto_botao_card_cta = get_sub_field('texto_botao_card_cta');
+$link_botao_card_cta = get_sub_field('link_botao_card_cta');
+
 
 $direction = $posicao == 0 ? 'row-reverse' : 'row';
 
@@ -65,23 +70,14 @@ if($animI == 0):
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="grid-beneficios">
-                    <?php foreach($listaBeneficios as $item){
-                        ?>
-                            <div class="item-beneficio">
-                                <div class="icon">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="10" cy="10" r="10" fill="#00AEEE"/>
-                                        <path d="M12.6949 7L8.61865 11.2728L7.29661 9.88706L6 11.2462L7.32203 12.632L8.62711 14L9.92373 12.6409L14 8.36803L12.6949 7Z" fill="white"/>
-                                    </svg>
-                                </div>
-                                <div class="content">
-                                    <h3><?php echo $item['title'];?></h3>
-                                    <p><?php echo $item['conteudo'];?></p>
-                                </div>
-                                
-                            </div>
-                        <?php
-                    }?>
+                    
+                    <?php foreach($lista_cards as $item): ?>
+                          <div class="item">
+                            <h3><?php echo $item['titulo'];?></h3>
+                            <p><?php echo $item['descricao'];?></p>
+                          </div>
+                    <?php endforeach; ?>
+                   
                 </div>
             </div>
         </div> 

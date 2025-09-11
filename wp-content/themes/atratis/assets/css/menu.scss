@@ -63,7 +63,7 @@
 }
 
 .show a {
-    left: 100%;
+    /* left: 100%; */
     top: 0;
 }
 
@@ -76,7 +76,7 @@
 
 //
 header {
-    background-color: transparent;
+    background: #FFFFFFCC;
     position: fixed;
     top: 0;
     z-index: 999;
@@ -89,8 +89,13 @@ header {
             display: flex;
             align-items: center;
 
+
             a {
                 margin-right: 20px;
+
+                img {
+                    max-width: 280px;
+                }
             }
 
             .separador {
@@ -99,6 +104,50 @@ header {
                 background: #C9C9C9;
             }
         }
+
+        .navbar {
+            #menu-menu-principal {
+                gap: 20px;
+                li {    
+                    a {
+                        color: #2B2B2B;
+                        font-family: $fontTitulo;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 29px;
+                        display: block;
+                        width: fit-content;
+                        transition: 0.3s ease-in-out;
+                        position: relative;
+                        
+                        &::before {
+                            content: '';
+                            display: block;
+                            width: 0%;
+                            height: 2px;
+                            background: $primary;
+                            transition: .5s ease-in-out;
+                            position: absolute;
+                            top: 35px;
+                        }
+
+                        &:hover {
+                            color: $secondary;
+                            
+                            &::before {
+                    
+                                width: 90%;
+                                background: $secondary;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+
+        
 
         .content-header-two-cols {
             display: flex;
@@ -122,7 +171,8 @@ header {
 
                     ul {
                         list-style: none;
-                        margin: 0;
+                        margin: 0 !important;
+                        padding-left: 0 !important;
     
                         display: flex;
                         gap: 20px;
@@ -212,8 +262,6 @@ header {
                         display: block;
                     }
                     
-                    
-
                     .separador {
                         width: 1px;
                         height: 24px;
@@ -252,23 +300,18 @@ header {
                     }
                 }
                 
-
                 .separador {
                     width: 1px;
                     height: 26px;
                     background: $branco;
                 }
 
-                
             }
+            
 
             .content-menu-justify {
                 display: flex;
                 align-items: center;
-
-                a.nav-link {
-                    color: #000;
-                }
 
                 .links {
                     display: flex;
@@ -283,13 +326,23 @@ header {
 
                     a {
                         margin-left: 20px;
-                        
+                        margin-right: 20px;
+                    }
+
+                    .busca_bt {
+                        width: 33px;
+                        height: 33px;
+                        border-radius: 50%;
+                        background: #2443a9;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
 
                     ul {
                         list-style: none;
-                        margin: 0;
-    
+                        margin: 0 !important;
+                        padding-left: 0 !important;
                         display: flex;
                         gap: 20px;
     
@@ -298,7 +351,7 @@ header {
                                 width: 33px;
                                 height: 33px;
                                 border-radius: 50%;
-                                background: $verde-rgb;
+                                background: $secondary;
                                 margin: 0;
                                 
                                 display: flex;
@@ -316,7 +369,7 @@ header {
                                 }
     
                                 svg {
-                                    fill: $primary;
+                                    fill: $branco;
                                 }
                             }
                         }
@@ -383,8 +436,6 @@ header.normal {
 header.fixa  {
 	position: fixed;
 	transition: 1s;
-
-    background: $branco;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -403,6 +454,9 @@ header.fixa  {
     z-index: 9999;
     background-color: #eaeaea;
     transition: .3s;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 20px;
 
     .navbar {
         width: 100%;
@@ -516,6 +570,9 @@ header.fixa  {
     }
 }
 
+#menu-menu-principal-1 .dropdown-menu.show {
+    margin: 0;
+}
 
 .icon-menu {
     cursor: pointer;
@@ -525,7 +582,7 @@ header.fixa  {
     span {
         height: 3px;
         width: 100%;
-        background-color: $preto;
+        background-color: $branco;
         position: absolute;
     }
     
@@ -579,7 +636,7 @@ header.fixa  {
 }
 
 .mob_header {
-    background: $branco;
+    background: $primary;
     opacity: 1;
     position: fixed;
     transition: all .3s ease-in-out 0s;
@@ -593,7 +650,7 @@ header.fixa  {
 
     .marca {
         img {
-            width: 120px;
+            width: 170px;
         }
     }
 
@@ -605,7 +662,7 @@ header.fixa  {
 }
 
 .header-placeholder {
-    height: 72px;
+    height: 92px;
 
     @media screen and (max-width: 1200px) {
         height: 60px !important;

@@ -16,12 +16,12 @@ $link_do_cta = get_sub_field('link_do_cta');
 $texto_do_cta = get_sub_field('texto_do_cta');
 
 $imagem = get_sub_field('imagem');
-$lista_sobre = get_sub_field('lista_sobre');
+$lista_numero = get_sub_field('lista_numero');
 
 $titulo = get_sub_field('titulo');
+$subtitulo = get_sub_field('subtitulo');
 $conteudo = get_sub_field('conteudo');
-$link_do_cta = get_sub_field('link_do_cta');
-$texto_cta = get_sub_field('texto_do_cta');
+
 $subtitulo = get_sub_field('subtitulo');
 $direction = $posicao == 0 ? 'row-reverse' : 'row';
 
@@ -56,44 +56,46 @@ if($animI == 0):
 
 <section class="sessaoSobre <?php echo $classe; ?> <?php echo $parallax; ?> " style="<?php echo $geraisCSS; ?>; background-position: center;" <?php echo $animacao; ?>>
 
-    
     <div class="container">
-        <div class="row" >
-            <div class="col-lg-4" data-aos="fade-right" data-aos-duration='1000' data-aos-delay='300'>
+        <div class="row">
+            <div class="col-lg-6 content-img-col">
+                <img src="<?php echo esc_url($imagem['url']); ?>" alt="">
+            </div>
+            <div class="col-lg-6">
                 <div class="title">
-                    <h4><?php echo $subtitulo; ?></h4>
+                    <h4>
+                        <div class="separador separador-esquerda"></div>
+                        <?php echo $subtitulo; ?>
+                        <div class="separador separador-direita"></div>
+                    </h4>
+                    <h2><?php echo $titulo; ?></h2>
 
-                    <h2>
-                        <?php echo $titulo; ?>
-                    </h2>
+                    <p><?php echo $conteudo;?></p>
 
-                    <p>
-                        <?php echo $conteudo; ?>
-                    </p>
+                    <a href="#" class="btn-padrao">
+                        Saiba mais
+                        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.85292 0H4.11754V1.37649H8.65033L0 10.0268L0.973179 11L9.62351 2.34967V6.88246H11V1.14708C11 0.514808 10.4857 0 9.85292 0Z" fill="white"/>
+                        </svg>
+                    </a>
 
-                    <a href="<?php echo $link_do_cta; ?>" class="btn-padrao"><?php echo $texto_cta;?></a>
-
+                    <div class="lista-numeros">
+                        <?php foreach($lista_numero as $item_numero){
+                            ?>
+                                <div class="item-numero">
+                                    <h3>
+                                        <span><?php echo $item_numero['pre_numero']?></span> 
+                                        <span class="numero-infos"><?php echo $item_numero['numero'];?></span> 
+                                        <span><?php echo $item_numero['pos_numero']?></span>
+                                    </h3>
+                                    <p><?php echo $item_numero['titulo_numero']?></p>
+                                </div>
+                            <?php
+                        }?>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-5" data-aos="fade-left" data-aos-duration='1000' data-aos-delay='300'>
-                <div class="img">
-                    <img src="<?php echo $imagem['url']; ?>" alt="<?php echo $imagem['alt']; ?>">
-                </div>
-            </div>
-            <div class="col-lg-3" data-aos="fade-left" data-aos-duration='1000' data-aos-delay='300'>
-                <ul>
-                    <?php foreach($lista_sobre as $item): ?>
-                    <li>
-                       <!--  <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.55171 7.97028C3.23947 7.97041 2.94001 7.8463 2.71941 7.62533L0.20307 5.10992C-0.0676898 4.83907 -0.0676898 4.40003 0.20307 4.12919C0.473916 3.85843 0.912957 3.85843 1.1838 4.12919L3.55171 6.4971L9.8162 0.232611C10.087 -0.0381488 10.5261 -0.0381488 10.7969 0.232611C11.0677 0.503457 11.0677 0.942498 10.7969 1.21334L4.38402 7.62533C4.16341 7.8463 3.86396 7.97041 3.55171 7.97028Z" fill="#00AEEE"/>
-                        </svg> -->
-
-                        <?php echo $item['titulo']; ?>
-                    </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        </div> 
+        </div>
     </div>
 
 </section>

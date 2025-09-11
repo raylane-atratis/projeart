@@ -28,12 +28,12 @@
     border-top: 1px solid #CAD1EB;
 
     h1 {
-        font-weight: 900;
+        font-weight: 700;
         font-size: 40px;
         line-height: 55px;
         letter-spacing: 0%;
 
-        color: $preto;
+        color: #0F204D;
     }
 }
 
@@ -127,86 +127,7 @@
     }
 
     .grid-blog {
-        
-        
-        .item {
-            margin-bottom: 50px;
-            border-radius: 20px;
-            border: 1px solid #D7D7D7;
-            padding: 13px;
-
-            .content-card {
-                display: block;
-                
-                border-radius: 20px;
-                /* max-width: 378px; */
-                text-decoration: none;
-        
-                &:hover {
-                    .img {
-                        img {
-                            transform: scale(1.1);
-                        }
-                    }
-        
-                    .content-title {
-                        small {
-                            text-decoration: underline;
-                            
-                        }
-                    }
-                }
-        
-                .img {
-                    position: relative;
-                    display: block;
-                    overflow: hidden;
-                    border-radius: 20px;
-                   
-        
-                    img {
-                        width: 100%;
-                        transition: 0.5s ease-in-out;
-                        
-                    }
-                }
-        
-                .content-title {
-                    padding: 20px 13px 15px;
-                    h3 {
-         
-                        font-size: 26px;
-                        font-weight: 800;
-                        line-height: 33px;
-                        text-align: left;
-            
-                    }
-        
-                    p{
-            
-                        font-size: 15px;
-                        font-weight: 400;
-                        line-height: 29px;
-                        text-align: left;
-                        color: #6F7485;
-                        margin-bottom: 19px;
-                    }
-        
-                    small {
-                        font-size: 15px;
-                        font-weight: 700;
-                        line-height: 29px;
-                        text-align: left;
-                        color: $primary;
-        
-                    }
-                }
-        
-                
-        
-                
-            }
-        }
+   
     }
 
     
@@ -262,6 +183,8 @@ aside {
 
     ul {
         list-style: none;
+        margin-top: 15px;
+        padding: 0;
 
         .current-category {
 
@@ -303,7 +226,7 @@ aside {
 }
 
 .form-newsletter {
-    background: linear-gradient(90.23deg, #00AEEE 0.2%, #013E7E 58.18%, #012D6C 103.57%);
+    background: $primary;
     padding: 27px 33px;
 
     border: 1px solid #C9C9C9;
@@ -333,16 +256,17 @@ aside {
         
         input {
             width: 100%;
-            padding: 7px;
-
-            background: $primary;
-            color: #000;
+            padding: 11px ;
+            font-size: 18px;
+            background: $tertiary;
+            color: $primary;
             transition: 0.3s ease-in-out;
             border: 0;
+            border-radius: 22px;
             font-weight: 900;
             &:hover {
-                background: $branco !important;
-                color: $primary !important;
+                background: $secondary !important;
+                color: $branco !important;
             }
         }
     }
@@ -399,123 +323,128 @@ aside {
 		}
 	}
 	
-  }
+}
+        
+.grid-arquivo-unidades {
+    padding: 60px 0 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(415px, 1fr));
+    gap: 32px;
+
+    @media screen and (max-width: 620px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+
+    .item-unidades {
+        border: 1px solid #DDDDDD;
+        background: #FCFCFC;
+        padding: 28px 37px;
+        border-radius: 20px;
+
+        h3 {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 33px;
+        }
+
+        p {
+            max-width: 450px;
+            padding: 4px 0 12px;
+        }
+
+        .contato-tel {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+
+            text-decoration: none;
+            margin-bottom: 18px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .btn-tertiary {
+            width: fit-content;
+        }
+    }
+}
 
 .grid-arquivo-solucoes {
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     gap: 20px;
     row-gap: 40px;
     padding: 60px 0;
-
-    .content-card {
-            overflow: hidden;
-            display: block;
-            width: 100%;
-            height: 508px;
-            border-radius: 20px;
-            position: relative;
-            transition: all .5s ease-in-out;
-            box-shadow: 0px 0px 18.24px 0px #0000001A;
-
-
-            &::before {
-                content: '';
-                display: block;
-                width: 100%;
-                height: 100%;
-                
-                background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0) 80%);;
-
-                  
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 2;
-                
-            }
-            
-            img {
-                border-radius: 20px;
-                height: 508px;
-                width: 100%;
-                object-fit: cover;
-                object-position: center;
-
-                transition: all .5s ease-in-out;
-                
-
-                
-            }
-
-            .content-text {
-                position: absolute;
-                z-index: 3;
-                top: 0;
-                left: 0;
-                height: 508px;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-
-                padding:  15px 20px;
-
-                h3 {
-                    color: #FEF7EA;
-                    font-weight: 700;
-                    font-size: 31px;
-                    line-height: 31px;
-                    letter-spacing: 0%;
-                    text-align: center;
-
-                    margin-bottom: 30px;
-
-                }
-
-                .btn-post {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 15px;
-                    font-size: 15px;
-                    color: $branco;
-                    margin-bottom: 30px;
-                }
-            }
-
-            &:hover {
-                img {
-                    transform: scale(1.1);
-                }
-            
-            }
-        }
    
 }
 
-.grid-arquivo-clients {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(164px, 1fr));
-    gap: 30px;
+.item-solucoes {
+    border: 1px solid #B7B7B7;
+    border-radius: 20px;
+    transition: all .5s ease-in-out;
+    text-decoration: none;
 
-
-    padding: 60px 0;
-
-    .content-card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: 100%;
+    
+    .img-solucao {
+        overflow: hidden;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
         img {
-            transition: all 0.3s ease-in-out;
+            transition: all .5s ease-in-out;
             width: 100%;
-            &:hover {
+        }
+    }
+
+    .texto-solucao {
+        padding: 18px 27px 22px;
+
+        h3 {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 33px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 29px;
+            margin-bottom: 18px;
+        }
+
+        small {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 29px;
+            color: #2443A9;
+        }
+    }
+
+    &:hover {
+        border: 1px solid $primary;
+        box-shadow: rgba(43, 113, 202, 0.25) 0px 50px 100px -20px, rgba(36, 67, 169, 0.3) 0px 30px 60px -30px;
+
+        .img-solucao {
+            img {
                 transform: scale(1.1);
             }
         }
+
+        small {
+            text-decoration: underline;
+        }
+
+        
     }
+
 }
 
 .select-personalizado {
@@ -606,12 +535,8 @@ aside {
 
 .formulario{
 
-        background: #012D6C;
-        border-radius: 15px;
-
-        
-
-
+        background: $primary;
+        border-radius: 20px;
         padding: 38px 50px;
   
         overflow: initial !important;
@@ -623,11 +548,16 @@ aside {
 
         .submit-btn {
             padding: 10px 34px;
-            background: $primary;
-            color: $branco;
+            background: $tertiary;
+            border-radius: 24px;
+            color: $secondary;
+            font-weight: 700;
             transition: 0.5s ease-in-out;
             border: 0;
-            border-radius: 24px;
+
+            @media screen and (max-width: 992px) {
+                 width: 100%;
+            }
 
             &:hover {
                 background: $branco !important; 
@@ -640,6 +570,10 @@ aside {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+
+                @media screen and (max-width: 992px) {
+                    flex-direction: column;
+                }
             }
         }
 
@@ -1147,4 +1081,114 @@ iframe {
 
 ul.wp-block-list li {
     color: $fontCorTexto;
+}
+
+.newsletter-blog {
+    min-height: 338px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 100px;
+
+    h3 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 7px;
+        text-align: center;
+    }
+
+    p.descricao-newsletter-blog {
+        color: #fff;
+        text-align: center;
+        max-width: 447px;
+        margin-bottom: 22px;
+    }
+
+    img {
+        position: absolute;
+        left: -105px;
+        bottom: -40px;
+        z-index: 1;
+
+        @media screen and (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    .formulario-newsletter {
+        background: #fff;
+        position: relative;
+        padding: 8px;
+        z-index: 2;
+
+        .wpcf7-spinner {
+            position: absolute;
+            top: 44px;
+            right: 0px;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            width: 448px;
+
+            input {
+                border: 0;
+            }
+
+            input:focus {
+                outline: 0 !important;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.content-page {
+    padding: 60px 0;
+    
+    @media screen and (max-width: 992px) {
+        padding: 30px 15px;   
+    }
+
+    h2, h3, h4, h5, h6 {
+        margin: 30px 0 10px;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    ul, ol {
+        margin-bottom: 10px;
+        margin-left: 15px;
+
+        li {
+            color: #787878;
+        }
+    }
+}
+
+.plyr__video-wrapper, .plyr__controls {
+    background: transparent !important;
+}
+
+// cor do svg
+.plyr__control--overlaid.plyr__control svg {
+    fill: $branco !important;
+}
+
+// cor do botão do player
+.plyr__control--overlaid {
+    background: transparent !important;
+    border: 5px solid #FFF !important;
+}
+
+// poster thumbnail
+.plyr__poster {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-radius: 20px !important;
 }

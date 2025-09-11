@@ -23,21 +23,21 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: $fontTitulo;
     margin: 0;
-    color: $secondary;
+    color: $fontCorTitulo;
 }
 
 h1 {
-    font-size: 44px;
+    font-size: 50px;
     line-height: 55px;
 }
 
 h2 {
-    font-size: 37px;
-    line-height: 50px;
+    font-size: 32px;
+    line-height: 40px;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 33px;
 }
 
@@ -47,8 +47,8 @@ h4 {
 }
 
 p {
-    font-size: 15px;
-    line-height: 29px;
+    font-size: 16px;
+    line-height: 20px;
     margin: 0;
     font-family: $fontTexto;
     color: $fontCorTexto;
@@ -60,23 +60,29 @@ a {
 }
 
 .btn-padrao {
-    background: $primary;
+    background: $secondary;
     color: $branco;
     transition: 0.5s ease-in-out;
-    padding: 12px 30px 12px 30px;
-    border-radius: 30px;
+    padding: 9px 21px 9px 21px;
     text-decoration: none !important;
-    display: block;
-    margin-top: 20px;
+    font-family: $fontTitulo;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     width: fit-content;
+    border-radius: 25px;
 
     svg {
         transition: 0.5s ease-in-out;
     }
 
     &:hover {
-        background: $secondary;
-
+        background: $primary;
         color: $branco !important;
 
         svg {
@@ -86,13 +92,21 @@ a {
 }
 
 .btn-secundario {
-    background: $branco;
-    color: $secondary;
+    background: $secondary;
+    color: $branco;
     transition: 0.5s ease-in-out;
     padding: 9px 21px 9px 21px;
-    border-radius: 10px;
     text-decoration: none !important;
-    border: 1px solid $secondary;
+    font-family: $fontTitulo;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 25px;
 
     svg {
         transition: 0.5s ease-in-out;
@@ -100,7 +114,7 @@ a {
     }
 
     &:hover {
-        background: $secondary;
+        background: $primary;
 
         color: $branco !important;
 
@@ -110,6 +124,38 @@ a {
     }
 }
 
+.btn-tertiary {
+    background: $tertiary;
+    color: $secondary;
+    transition: 0.5s ease-in-out;
+    padding: 9px 21px 9px 21px;
+    text-decoration: none !important;
+    font-family: $fontTitulo;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 25px;
+
+    svg {
+        transition: 0.5s ease-in-out;
+        fill: $branco;
+    }
+
+    &:hover {
+        background: $primary;
+
+        color: $branco !important;
+
+        svg {
+            fill: $branco !important;
+        }
+    }
+}
 
 .assinatura {
     float: right;

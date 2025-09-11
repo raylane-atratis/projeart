@@ -22,6 +22,9 @@ $titulo = get_sub_field('titulo');
 $subtitulo = get_sub_field('subtitulo');
 $conteudo = get_sub_field('conteudo');
 
+$lista_de_botoes = get_sub_field('lista_de_botoes');
+
+
 $direction = $posicao == 0 ? 'row-reverse' : 'row';
 
 // [ANIMAÇÃO CONTEÚDO]
@@ -76,6 +79,18 @@ if($animI == 0):
                             <a href="<?php echo $link_do_cta; ?>" class="btn-padrao"><?php echo $texto_do_cta; ?></a>
                         <?php
                     }?>
+
+                    <?php if($lista_de_botoes): ?>
+                        <div class="lista-botoes">
+                            <?php foreach($lista_de_botoes as $item): ?>
+                                <a href="<?php echo $item['link_botao']; ?>" class="btn-tertiary">
+                                    <?php echo $item['svg']; ?>
+                                    <?php echo $item['cta_botao']; ?>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                        
+                    <?php endif;?>
                     
             </div>
         </div> 

@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1>News</h1>
+                        <h1>Notícias</h1>
                     </div>
                  </div>
             </div>
@@ -34,26 +34,17 @@
                         <?php if (have_posts()): ?>
                             <div class="row">
                             <?php while(have_posts()) : the_post(); ?>
-                                <div class="col-lg-6">
-                                <article class="item">
-                                <a href="<?php echo the_permalink()?>" class="content-card">
-                                    <div class="img">
-                                        <img src="<?php the_post_thumbnail_url()?>" alt="">
-                                    </div>
-
-                                    <div class="content-title">
-                                        <h3><?php echo the_title();?></h3>
-                                        <?php
-                                            $_the_excerpt = get_the_excerpt();
-                                            $the_excerpt = substr( $_the_excerpt, 0, 200 );
-                                        ?>
-                                        
-                                        <p><?php echo esc_html($the_excerpt); ?></p>
-                                        <small>Learn More</small>
-                                    </div>
-                                </a>
-                                    
-                                </article>
+                                <div class="col-lg-6" style="margin-bottom: 25px;">
+                                    <a href="<?php echo the_permalink(); ?>" class="item-solucoes">
+                                        <div class="img-solucao">
+                                            <img src="<?php the_post_thumbnail_url()?>" alt="imagem-solucoes">
+                                        </div>
+                                        <div class="texto-solucao">
+                                            <h3><?php echo the_title(); ?></h3>
+                                            <?php echo the_content();?>
+                                            <small>Saiba mais</small>
+                                        </div>
+                                    </a>
                                 </div>
                             <?php endwhile; ?>
                             </div>	

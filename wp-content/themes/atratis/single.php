@@ -72,6 +72,9 @@
           <?php echo get_template_part("templates/share"); ?>
         </div>
       </div>
+
+   
+
     </div>
 
 </div>

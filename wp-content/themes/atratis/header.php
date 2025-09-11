@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimWorx <?php wp_title(); ?></title>
+    <title>Crédito Solidário <?php wp_title(); ?></title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
     <link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/build/css/all.css">
 
     <?php echo get_field('acf-header-codigo', "option"); ?>
@@ -22,6 +26,7 @@
     <?php 
         $logo_svg = get_field('logo_svg', 'option');
         $logo_png = get_field('logo_png', 'option');
+        $logo_png_branco = get_field('logo_png_branca', 'option');
 
         $texto_btn = get_field('texto_btn', 'option');
         $link_btn = get_field('link_btn', 'option');
@@ -32,11 +37,11 @@
         $is_full_topo = get_field('add_top_full', 'option')
     ?>
 
-    <header style="background:<?php echo !is_home() ? '#fff' : '';?>; border-bottom: <?php echo !is_home() ? '1px solid #cad1eb' : '';?>;" class="desktop menupc">
+    <header style="border-bottom: <?php echo !is_home() ? '1px solid #cad1eb' : '';?>;" class="desktop menupc">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="d-flex align-items-center justify-content-between flex-wrap">
+                    <div class="d-flex align-items-center justify-content-between flex-wrap header-efeito-blur">
                         <div class="logo-selo">
 
                             <a href="<?php echo get_home_url(); ?>">
@@ -48,7 +53,9 @@
                             </a>
                         </div>
 
+                                
                         <div class="content-header-two-cols">
+
                             <?php if($links_topo): ?>
                             <div class="nav-top">
                                     <div class="items-links">
@@ -69,7 +76,7 @@
                                                     </div>
                                                 <?php } ?> -->
                                             </div>
-                                            <div class="separador"></div>
+                                            
                                         <?php } ?>
                                         <!-- Se existir links no topo, mostrar rede socias na linha de cima -->
                                         <?php if($links_topo):?>
@@ -79,7 +86,7 @@
                                                     </svg>
                                                 </a>
 
-                                                <div class="separador"></div>
+                                                
 
                                                 <ul>
                                                     <?php foreach($redes as $item){
@@ -122,18 +129,39 @@
                                         ?>
                                     </div>
                                 </nav>
-                                
-                                
                                 <div class="links">
+                                    
+
                                     <a href="<?php echo $link_btn;?>" class="btn-padrao" style="margin-top: 0;">
                                         <?php echo $texto_btn;?>
                                     </a>
 
                                     <!-- Se não existir links no topo, mostrar rede socias em uma linha -->
-                                  
+                                    <?php if(!$links_topo): ?>
+
+                                        
+
+                                        <ul>
+                                            <?php foreach($redes as $item){
+                                                ?>
+                                                    <li>
+                                                        <a href="<?php echo $item['link_icone']?>" target="_blank">
+                                                            <?php echo $item['svg']?>
+                                                        </a>
+                                                    </li>
+                                                <?php
+                                            }?>
+                                        </ul>
+
+                                    <?php endif;?>
+
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Pesquisar" href="#" class="busca_bt abrir_pesquisa">
+                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.7377 13.0241C10.2756 14.159 8.43603 14.6941 6.59337 14.5204C4.75071 14.3467 3.0435 13.4773 1.81924 12.0891C0.594977 10.7009 -0.0543033 8.89837 0.00356021 7.04831C0.0614237 5.19826 0.822082 3.43979 2.1307 2.13085C3.43954 0.822141 5.19789 0.0614281 7.04781 0.00356046C8.89773 -0.0543072 10.7002 0.59502 12.0882 1.81937C13.4763 3.04372 14.3457 4.75105 14.5194 6.59384C14.6931 8.43663 14.158 10.2764 13.0231 11.7385L16.7097 15.4254C16.8295 15.5366 16.917 15.678 16.9631 15.8347C17.0092 15.9915 17.0122 16.1578 16.9717 16.3161C16.9312 16.4744 16.8488 16.6188 16.7331 16.7342C16.6175 16.8496 16.4728 16.9316 16.3144 16.9717C16.1563 17.0121 15.9902 17.0092 15.8336 16.9633C15.677 16.9174 15.5356 16.8303 15.4243 16.7109L11.7377 13.0241ZM12.7321 7.27548C12.7429 6.55218 12.6097 5.83396 12.3404 5.16259C12.0711 4.49122 11.671 3.88011 11.1634 3.36481C10.6557 2.8495 10.0507 2.44029 9.38345 2.16098C8.71621 1.88166 8.00011 1.73782 7.27678 1.73782C6.55345 1.73782 5.83735 1.88166 5.17011 2.16098C4.50288 2.44029 3.89785 2.8495 3.39021 3.36481C2.88256 3.88011 2.48245 4.49122 2.21313 5.16259C1.94381 5.83396 1.81068 6.55218 1.82146 7.27548C1.84282 8.70834 2.42698 10.0753 3.44772 11.081C4.46847 12.0867 5.84387 12.6505 7.27678 12.6505C8.70969 12.6505 10.0851 12.0867 11.1058 11.081C12.1266 10.0753 12.7107 8.70834 12.7321 7.27548Z" fill="#fff"/>
+                                        </svg>
+                                    </a>
 
                                 </div>
-                                
                             </div>
                         </div>
                         
@@ -182,7 +210,7 @@
             <div class="row align-items-center">
                 <div class="col-9">
                     <a href="<?php echo get_home_url(); ?>" class="marca">
-                        <img src="<?php echo $logo_png['url'];?>" alt="">
+                        <img src="<?php echo $logo_png_branco['url'];?>" alt="">
                     </a>
                 </div>
                 <div class="col-3">
@@ -202,8 +230,8 @@
         <nav class="navbar">
             <?php
                 wp_nav_menu([
-                    'menu'            => 'Menu Mobile',
-                    'theme_location'  => 'menu_mobile',
+                    'menu'            => 'Menu Principal',
+                    'theme_location'  => 'principal',
                     'container'       => '',
                     'container_id'    => '',
                     'container_class' => 'collapse navbar-collapse',

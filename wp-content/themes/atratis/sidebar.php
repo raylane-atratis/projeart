@@ -13,11 +13,11 @@
     </div>
 
     <div class="navegacao">
-        <h3>Browse by:</h3>
+        <h3>Navegue por:</h3>
         <ul>
             <?php
             // ID da categoria "Blog"
-            $blog_category_id = get_cat_ID('News'); // Substitua 'Blog' pelo nome exato da categoria "Blog" se for diferente
+            $blog_category_id = get_cat_ID('Notícias'); // Substitua 'Blog' pelo nome exato da categoria "Blog" se for diferente
 
             // Argumentos para obter subcategorias
             $args = array(
@@ -39,8 +39,8 @@
 
 
     <div class="form-newsletter">
-        <h3>Sign Up and Receive Updates</h3>
-        <p>Stay Up to Date with the Latest </p>
+        <h3>Cadastre-se e receba novidades</h3>
+        <p>Fique por dentro das novidades</p>
 
         <?php echo do_shortcode('[contact-form-7 id="f7bb8f9" title="Formulário newsletter_blog"]'); ?>
     </div>

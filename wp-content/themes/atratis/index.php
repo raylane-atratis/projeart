@@ -47,6 +47,9 @@
 					$btnLink = get_field('link_btn'); 
 					$btnAba = get_field('nova_aba'); 
 
+					$subtitulo_html = get_field('subtitulo_html'); 
+					
+
 					// Posição do conteúdo
 					$posicaoConteudo = get_field('posicao_descricao'); 
 					if($posicaoConteudo == 1):
@@ -97,7 +100,11 @@
 						<div class="row">
 							<div class="col-12 col-lg-12">
 								<div class="texto <?php echo $posConteudo; ?>" data-aos="fade-right" data-aos-duration="1000">
-
+									<?php if($subtitulo_html): ?>
+										<h3>
+											<?php echo $subtitulo_html; ?>
+										</h3>
+									<?php endif; ?>
 									<?php if($titulo): ?>
 										<h1 ><?php echo $titulo; ?></h1>
 									<?php endif; ?>
@@ -106,8 +113,8 @@
 											<?php echo $conteudo; ?>
 										</div>
 									<?php endif; ?>
-				
-									<a class="btn-padrao" href="
+
+									<a class="btn-secundario" href="
 										<?php 
 											// Link do Banner
 											if($btnLink):
@@ -124,7 +131,7 @@
 												echo ""; 
 											endif; 
 										?> 
-										class="bt__padrao">
+										>
 										<?php if($btnNome): ?>
                                             <?php echo $btnNome; ?>
                                         <?php else:?>

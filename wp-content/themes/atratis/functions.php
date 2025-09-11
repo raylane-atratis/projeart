@@ -571,7 +571,7 @@ function enqueue_custom_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
-add_filter('wpcf7_validate_select', 'validar_prefeitura_condicional', 20, 2);
+/* add_filter('wpcf7_validate_select', 'validar_prefeitura_condicional', 20, 2);
 add_filter('wpcf7_validate_select*', 'validar_prefeitura_condicional', 20, 2);
 
 function validar_prefeitura_condicional($result, $tag) {
@@ -587,6 +587,27 @@ function validar_prefeitura_condicional($result, $tag) {
     }
 
     return $result;
-}
-?>
+} */
 
+class Walker_Categorias_Checked extends Walker_Category {
+    function start_el(&$output, $category, $depth = 0, $args = array(), $id = 0) {
+        $cat_name = esc_html($category->name);
+
+        // URL da categoria
+        $link = get_term_link($category);
+
+        // Verifica se a categoria está ativa
+        $active_class = '';
+        if (is_tax('categoria-produtos', $category->term_id)) {
+            $active_class = ' active-categoria';
+        }
+
+        $output .= '<li>';
+        $output .= '<a href="' . esc_url($link) . '">';
+        $output .= '<div class="checked' . $active_class . '"></div> ';
+        $output .= $cat_name;
+        $output .= '</a>';
+    }
+}
+
+?>

@@ -23,15 +23,18 @@
             
             </div>
 
+        <?php if (trim(get_the_content()) !== ''): ?>
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                
-                    <?php the_content(); ?>
-                
+                    <div class="content-page">
+                        <?php the_content(); ?>
+                    </div>
                 </div>
             </div>
         </div>
+        <?php endif; ?>
+
 
 <!-- [BLOCOS] Chamar template de blocos -->	
 <?php get_template_part('blocos'); ?>

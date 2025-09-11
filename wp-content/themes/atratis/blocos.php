@@ -48,6 +48,23 @@
     elseif(get_row_layout() == 'sessao_beneficios' && get_sub_field('exibir') ):
         get_template_part('template-parts-blocos/sessao_beneficios');
 
+    elseif(get_row_layout() == 'sessao_numeros' && get_sub_field('exibir') ):
+        get_template_part('template-parts-blocos/sessao_numeros');
+
+    elseif(get_row_layout() == 'sessao_segmentos' && get_sub_field('exibir') ):
+        get_template_part('template-parts-blocos/sessao_segmentos');
+
+    elseif(get_row_layout() == 'sessao_missao_valores' && get_sub_field('exibir') ):
+        get_template_part('template-parts-blocos/sessao_missao_valores');
+
+    elseif(get_row_layout() == 'sessao_quadro_funcionarios' && get_sub_field('exibir') ):
+        get_template_part('template-parts-blocos/sessao_quadro_funcionarios');
+
+    elseif(get_row_layout() == 'sessao_galeria_carrosel' && get_sub_field('exibir') ):
+        get_template_part('template-parts-blocos/sessao_galeria_carrosel');
+
+        
+
     endif;
             
 ?>
