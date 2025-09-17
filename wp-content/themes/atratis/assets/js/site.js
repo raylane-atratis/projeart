@@ -438,3 +438,25 @@ $(document).ready(function () {
 });
 
 jQuery("#telefone").mask("(99) 99999-9999");
+
+document.addEventListener('DOMContentLoaded', function () {
+    const overlay = document.getElementById('popup-overlay');
+    const closeBtn = document.querySelector('.popup-close');
+
+    if (overlay && closeBtn) {
+      // Mostra o popup automaticamente
+      overlay.style.display = 'flex';
+
+      // Fecha ao clicar no botão
+      closeBtn.addEventListener('click', function () {
+        overlay.style.display = 'none';
+      });
+
+      // Fecha ao clicar fora da área do conteúdo
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) {
+          overlay.style.display = 'none';
+        }
+      });
+    }
+});

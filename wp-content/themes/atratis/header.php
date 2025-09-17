@@ -317,6 +317,16 @@
         </div>
     </div>
 
-
+    <?php if ( is_front_page() ) : ?>
+        <?php $imagem_pop_up = get_field('imagem_pop-up', 'option'); ?>
+        <?php if ( $imagem_pop_up ) : ?>
+            <div id="popup-overlay" class="popup-overlay">
+            <div class="popup-content">
+                <span class="popup-close">&times;</span>
+                <img src="<?php echo esc_url($imagem_pop_up['url']); ?>" alt="Popup" />
+            </div>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
    
 <!--  -->
