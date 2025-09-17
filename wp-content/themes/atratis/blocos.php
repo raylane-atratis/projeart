@@ -63,7 +63,10 @@
     elseif(get_row_layout() == 'sessao_galeria_carrosel' && get_sub_field('exibir') ):
         get_template_part('template-parts-blocos/sessao_galeria_carrosel');
 
-        
+    elseif(get_row_layout() == 'sessao_texto_video' && get_sub_field('exibir') ):
+        get_template_part('template-parts-blocos/sessao_texto_video');
+
+    
 
     endif;
             

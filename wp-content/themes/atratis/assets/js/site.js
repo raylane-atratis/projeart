@@ -123,7 +123,7 @@ $('.owl-galeria-carrosel').owlCarousel({
         '<span class="seta-prev">&#10094;</span>', 
         '<span class="seta-next">&#10095;</span>'
   ],
-  dots: true, // remove bolinhas
+  dots: false, // remove bolinhas
   responsive: {
     0: {
       items: 1
@@ -187,11 +187,8 @@ jQuery('.owl-segmentos').owlCarousel({
     600: {
       items: 2
     },
-    800: {
-      items: 3
-    },
     1000: {
-      items: 4
+      items: 3
     }
   }
 });
@@ -440,4 +437,4 @@ $(document).ready(function () {
   });
 });
 
-
+jQuery("#telefone").mask("(99) 99999-9999");

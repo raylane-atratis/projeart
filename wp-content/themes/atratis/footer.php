@@ -73,7 +73,7 @@
                     <div class="col-lg-3">
                         <div class="endereco-footer">
                             <h3>Endereço</h3>
-                            <a href="<?php echo $link_endereco;?>"><?php echo $endereco;?></a>
+                            <a href="<?php echo $link_endereco;?>" target="_blank"><?php echo $endereco;?></a>
                         </div>
                     </div>
 
