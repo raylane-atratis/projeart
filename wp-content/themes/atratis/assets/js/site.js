@@ -147,9 +147,9 @@ jQuery('.owl-clients').owlCarousel({
   margin: 20,
   dots: true,
   nav: false,
-  /* autoplay:true,
+  autoplay:true,
   autoplayTimeout:1500,
-  autoplayHoverPause:false, */
+  autoplayHoverPause:false,
   responsive: {
     0: {
       items: 1
