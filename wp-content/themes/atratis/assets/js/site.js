@@ -143,7 +143,7 @@ function prevGaleria() {
 }
 
 jQuery('.owl-clients').owlCarousel({
-  loop: false,
+  loop: true,
   margin: 20,
   dots: true,
   nav: false,

@@ -41,7 +41,7 @@
                                         </div>
                                         <div class="texto-solucao">
                                             <h3><?php echo the_title(); ?></h3>
-                                            <?php echo the_content();?>
+                                            <?php echo the_expert();?>
                                             <small>Saiba mais</small>
                                         </div>
                                     </a>
