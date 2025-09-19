@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1>Notícias</h1>
+                        <h1>Blog</h1>
                     </div>
                  </div>
             </div>
@@ -28,13 +28,13 @@
 	<section class="blog_">
 		<div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
 
                     <div class="grid-blog">
                         <?php if (have_posts()): ?>
                             <div class="row">
                             <?php while(have_posts()) : the_post(); ?>
-                                <div class="col-lg-6" style="margin-bottom: 25px;">
+                                <div class="col-lg-4" style="margin-bottom: 25px;">
                                     <a href="<?php echo the_permalink(); ?>" class="item-solucoes">
                                         <div class="img-solucao">
                                             <img src="<?php the_post_thumbnail_url()?>" alt="imagem-solucoes">
@@ -59,13 +59,7 @@
                         <?php endif; ?>	
                     </div>
             
-                </div>
-
-                <div class="col-lg-4">
-                    <?php get_sidebar(); ?>
-                </div>
-
-                
+                </div>                
             </div>
 
             <div class="row">
