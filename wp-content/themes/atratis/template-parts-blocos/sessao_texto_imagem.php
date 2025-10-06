@@ -1,4 +1,4 @@
-<?php 
+<?php
 /////////////////////////////////////////////////////////
 // Configurações Gerais do Bloco
 // template: conf_gerais.php
@@ -28,72 +28,75 @@ $lista_de_botoes = get_sub_field('lista_de_botoes');
 $direction = $posicao == 0 ? 'row-reverse' : 'row';
 
 // [ANIMAÇÃO CONTEÚDO]
-if($animC == 0):
+if ($animC == 0):
     $animacaoConteudo = "";
-    elseif($animC == 1):
-        $animacaoConteudo = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
-        elseif($animC == 2):
-            $animacaoConteudo = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
-            elseif($animC == 3):
-                $animacaoConteudo = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
-                elseif($animC == 4):
-                    $animacaoConteudo = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
-                endif;
+elseif ($animC == 1):
+    $animacaoConteudo = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 2):
+    $animacaoConteudo = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 3):
+    $animacaoConteudo = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 4):
+    $animacaoConteudo = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
+endif;
 
 // [ANIMAÇÃO IMAGEM]
-if($animI == 0):
+if ($animI == 0):
     $animacaoImagem = "";
-    elseif($animI == 1):
-        $animacaoImagem = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
-        elseif($animI == 2):
-            $animacaoImagem = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
-            elseif($animI == 3):
-                $animacaoImagem = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
-                elseif($animI == 4):
-                    $animacaoImagem = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
-                endif;
+elseif ($animI == 1):
+    $animacaoImagem = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 2):
+    $animacaoImagem = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 3):
+    $animacaoImagem = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 4):
+    $animacaoImagem = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
+endif;
 
 ?>
 
-<section class="sessaoTextoImagem <?php echo $classe; ?> <?php echo $parallax; ?> " style="<?php echo $geraisCSS; ?>" <?php echo $animacao; ?>>
+<section class="sessaoTextoImagem <?php echo $classe; ?> <?php echo $parallax; ?> " style="<?php echo $geraisCSS; ?>"
+    <?php echo $animacao; ?>>
 
-    
+
     <div class="container">
         <div class="row align-items-center" style="flex-direction: <?php echo $direction; ?>">
-            <div class="col-lg-6"  >
+            
+            <div class="col-lg-6">
                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" <?php echo $animacaoImagem; ?>>
             </div>
+           
             <div class="col-lg-6" <?php echo $animacaoConteudo; ?>>
-                    <?php if($subtitulo){
-                        ?>
-                            <h4><?php echo $subtitulo;?></h4>
-                        <?php
-                    }?>
-                    
+                <?php if ($subtitulo) {
+                    ?>
+                    <h4><?php echo $subtitulo; ?></h4>
+                    <?php
+                } ?>
 
-                    <h2 style="<?php echo $corFonte;?>"><?php echo $titulo;?></h2>
-                    <?php echo $conteudo;?>
 
-                    <?php if($link_do_cta){
-                        ?>
-                            <a href="<?php echo $link_do_cta; ?>" class="btn-padrao"><?php echo $texto_do_cta; ?></a>
-                        <?php
-                    }?>
+                <h2 style="<?php echo $corFonte; ?>"><?php echo $titulo; ?></h2>
+                <?php echo $conteudo; ?>
 
-                    <?php if($lista_de_botoes): ?>
-                        <div class="lista-botoes">
-                            <?php foreach($lista_de_botoes as $item): ?>
-                                <a href="<?php echo $item['link_botao']; ?>" class="btn-tertiary">
-                                    <?php echo $item['svg']; ?>
-                                    <?php echo $item['cta_botao']; ?>
-                                </a>
-                            <?php endforeach; ?>
-                        </div>
-                        
-                    <?php endif;?>
-                    
+                <?php if ($link_do_cta) {
+                    ?>
+                    <a href="<?php echo $link_do_cta; ?>" class="btn-padrao"><?php echo $texto_do_cta; ?></a>
+                    <?php
+                } ?>
+
+                <?php if ($lista_de_botoes): ?>
+                    <div class="lista-botoes">
+                        <?php foreach ($lista_de_botoes as $item): ?>
+                            <a href="<?php echo $item['link_botao']; ?>" class="btn-tertiary">
+                                <?php echo $item['svg']; ?>
+                                <?php echo $item['cta_botao']; ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+
+                <?php endif; ?>
+
             </div>
-        </div> 
+        </div>
     </div>
 
 </section>

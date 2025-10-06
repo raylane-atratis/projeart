@@ -1,4 +1,4 @@
-<?php 
+<?php
 /////////////////////////////////////////////////////////
 // Configurações Gerais do Bloco
 // template: conf_gerais.php
@@ -24,47 +24,44 @@ $conteudo = get_sub_field('conteudo');
 $direction = $posicao == 0 ? 'row-reverse' : 'row';
 
 // [ANIMAÇÃO CONTEÚDO]
-if($animC == 0):
+if ($animC == 0):
     $animacaoConteudo = "";
-    elseif($animC == 1):
-        $animacaoConteudo = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
-        elseif($animC == 2):
-            $animacaoConteudo = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
-            elseif($animC == 3):
-                $animacaoConteudo = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
-                elseif($animC == 4):
-                    $animacaoConteudo = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
-                endif;
+elseif ($animC == 1):
+    $animacaoConteudo = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 2):
+    $animacaoConteudo = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 3):
+    $animacaoConteudo = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 4):
+    $animacaoConteudo = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
+endif;
 
 // [ANIMAÇÃO IMAGEM]
-if($animI == 0):
+if ($animI == 0):
     $animacaoImagem = "";
-    elseif($animI == 1):
-        $animacaoImagem = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
-        elseif($animI == 2):
-            $animacaoImagem = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
-            elseif($animI == 3):
-                $animacaoImagem = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
-                elseif($animI == 4):
-                    $animacaoImagem = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
-                endif;
+elseif ($animI == 1):
+    $animacaoImagem = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 2):
+    $animacaoImagem = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 3):
+    $animacaoImagem = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 4):
+    $animacaoImagem = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
+endif;
 
 ?>
 
 <section class="sessaoTexto <?php echo $classe; ?> <?php echo $parallax; ?> " style="<?php echo $geraisCSS; ?>" <?php echo $animacao; ?>>
 
-    
+
     <div class="container">
-        <div class="row align-items-center" style="flex-direction: <?php echo $direction; ?>" >
-            
+        <div class="row align-items-center" style="flex-direction: <?php echo $direction; ?>">
+
             <div class="col-lg-12">
-                    
-                    <h2 style="<?php echo $corFonte;?>"><?php echo $titulo;?></h2>
-                    
-                    <?php echo $conteudo;?>
-                    
+                <h2 style="<?php echo $corFonte; ?>"><?php echo $titulo; ?></h2>
+                <?php echo $conteudo; ?>
             </div>
-        </div> 
+        </div>
     </div>
 
 </section>

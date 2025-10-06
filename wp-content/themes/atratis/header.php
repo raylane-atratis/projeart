@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crédito Solidário <?php wp_title(); ?></title>
-    
+    <title>Aguiar Advogados <?php wp_title(); ?></title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    
+     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
@@ -196,7 +197,7 @@
         <?php if($links_topo):?>
             <div style="" class="header-placeholder link-top-placeholder"></div>
         <?php else: ?>
-            <div style="height: 60px" class="header-placeholder"></div>
+            <div style="height: 88px" class="header-placeholder"></div>
         <?php endif;?>   
     <?php endif;?>
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /////////////////////////////////////////////////////////
 // Configurações Gerais do Bloco
 // template: conf_gerais.php
@@ -18,69 +18,73 @@ $texto_do_cta = get_sub_field('texto_do_cta');
 
 $titulo = get_sub_field('titulo');
 $subtitulo = get_sub_field('subtitulo');
-$lista_cards = get_sub_field('lista_cards');
-
-$titulo_card_cta = get_sub_field('titulo_card_cta');
-$texto_botao_card_cta = get_sub_field('texto_botao_card_cta');
-$link_botao_card_cta = get_sub_field('link_botao_card_cta');
-
+$listaBeneficios = get_sub_field('lista_cards');
 
 $direction = $posicao == 0 ? 'row-reverse' : 'row';
 
 // [ANIMAÇÃO CONTEÚDO]
-if($animC == 0):
+if ($animC == 0):
     $animacaoConteudo = "";
-    elseif($animC == 1):
-        $animacaoConteudo = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
-        elseif($animC == 2):
-            $animacaoConteudo = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
-            elseif($animC == 3):
-                $animacaoConteudo = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
-                elseif($animC == 4):
-                    $animacaoConteudo = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
-                endif;
+elseif ($animC == 1):
+    $animacaoConteudo = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 2):
+    $animacaoConteudo = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 3):
+    $animacaoConteudo = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 4):
+    $animacaoConteudo = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
+endif;
 
 // [ANIMAÇÃO IMAGEM]
-if($animI == 0):
+if ($animI == 0):
     $animacaoImagem = "";
-    elseif($animI == 1):
-        $animacaoImagem = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
-        elseif($animI == 2):
-            $animacaoImagem = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
-            elseif($animI == 3):
-                $animacaoImagem = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
-                elseif($animI == 4):
-                    $animacaoImagem = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
-                endif;
+elseif ($animI == 1):
+    $animacaoImagem = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 2):
+    $animacaoImagem = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 3):
+    $animacaoImagem = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 4):
+    $animacaoImagem = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
+endif;
 
 ?>
 
 <section class="sessaoBeneficios <?php echo $classe; ?> <?php echo $parallax; ?> " style="<?php echo $geraisCSS; ?>" <?php echo $animacao; ?>>
 
-    
+
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="title">
-                    <h2><?php echo $titulo;?></h2>
+                    <h2><?php echo $titulo; ?></h2>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="grid-beneficios">
-                    
-                    <?php foreach($lista_cards as $item): ?>
-                          <div class="item">
-                            <h3><?php echo $item['titulo'];?></h3>
-                            <p><?php echo $item['descricao'];?></p>
-                          </div>
-                    <?php endforeach; ?>
-                   
+                    <?php foreach ($listaBeneficios as $item) {
+                    ?>
+                        <div class="item-beneficio">
+                            <div class="icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="10" cy="10" r="10" fill="#CD9274" />
+                                    <path d="M12.6949 7L8.61865 11.2728L7.29661 9.88706L6 11.2462L7.32203 12.632L8.62711 14L9.92373 12.6409L14 8.36803L12.6949 7Z" fill="white" />
+                                </svg>
+                            </div>
+                            <div class="content">
+                                <h3><?php echo $item['title']; ?></h3>
+                                <p><?php echo $item['descricao']; ?></p>
+                            </div>
+
+                        </div>
+                    <?php
+                    } ?>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 
 </section>

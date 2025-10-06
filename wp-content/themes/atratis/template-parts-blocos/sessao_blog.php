@@ -1,4 +1,4 @@
-<?php 
+<?php
 /////////////////////////////////////////////////////////
 // Configurações Gerais do Bloco
 // template: conf_gerais.php
@@ -24,104 +24,90 @@ $subtitulo = get_sub_field('subtitulo');
 $direction = $posicao == 0 ? 'row-reverse' : 'row';
 
 // [ANIMAÇÃO CONTEÚDO]
-if($animC == 0):
+if ($animC == 0):
     $animacaoConteudo = "";
-    elseif($animC == 1):
-        $animacaoConteudo = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
-        elseif($animC == 2):
-            $animacaoConteudo = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
-            elseif($animC == 3):
-                $animacaoConteudo = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
-                elseif($animC == 4):
-                    $animacaoConteudo = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
-                endif;
+elseif ($animC == 1):
+    $animacaoConteudo = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 2):
+    $animacaoConteudo = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 3):
+    $animacaoConteudo = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 4):
+    $animacaoConteudo = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
+endif;
 
 // [ANIMAÇÃO IMAGEM]
-if($animI == 0):
+if ($animI == 0):
     $animacaoImagem = "";
-    elseif($animI == 1):
-        $animacaoImagem = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
-        elseif($animI == 2):
-            $animacaoImagem = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
-            elseif($animI == 3):
-                $animacaoImagem = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
-                elseif($animI == 4):
-                    $animacaoImagem = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
-                endif;
+elseif ($animI == 1):
+    $animacaoImagem = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 2):
+    $animacaoImagem = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 3):
+    $animacaoImagem = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animI == 4):
+    $animacaoImagem = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
+endif;
 
 ?>
 
 <?php
-        $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => 6, 
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'category',
-                    'field'    => 'slug',
-                    'terms'    => 'noticias',
-                    'include_children' => true,
-                ),
-            ),
-        );
-        
-        $query = new WP_Query($args);
+$args = array(
+    'post_type' => 'post',
+    'posts_per_page' => 6,
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'category',
+            'field' => 'slug',
+            'terms' => 'artigos',
+            'include_children' => true,
+        ),
+    ),
+);
+
+$query = new WP_Query($args);
 ?>
 
 
 
-<section class="sessaoBlog <?php echo $classe; ?> <?php echo $parallax; ?> " style="<?php echo $geraisCSS; ?>" <?php echo $animacao; ?>>
+<section class="sessaoArtigos <?php echo $classe; ?> <?php echo $parallax; ?> " style="<?php echo $geraisCSS; ?>" <?php echo $animacao; ?>>
 
     <div class="container">
-        <div class="row" >
-            <div class="col-lg-6" data-aos="fade-right" data-aos-duration='1000' data-aos-delay='300'>
-                <div class="title">
+        <div class="row align-items-center">
+            <div class="col-lg-4" style="background: #fff;">
+                <div class="title" <?php echo $animacaoConteudo; ?>>
                     <h4><?php echo $subtitulo; ?></h4>
-
-                    <h2>
-                        <?php echo $titulo; ?>
-                    </h2>
-
+                    <h2><?php echo $titulo; ?></h2>
+                    <p><?php echo $descricao; ?></p>
+                    <a href="<?php echo esc_url(get_category_link(get_category_by_slug('artigos')->term_id)); ?>"
+                        class="btn-padrao">Ver todos</a>
                 </div>
             </div>
+            <div class="col-lg-8">
+                <div class="owl-carousel owl-blog owl-theme">
+                    <?php if ($query->have_posts()): ?>
+                        <?php while ($query->have_posts()):
+                            $query->the_post(); ?>
+                            <a href="<?php echo the_permalink() ?>" class="content-card">
+                                <div class="img">
+                                    <img src="<?php the_post_thumbnail_url() ?>" alt="">
+                                </div>
 
-           
-        </div> 
-        <div class="row">
-            <div class="col-lg-12" data-aos="fade-left" data-aos-duration='1000' data-aos-delay='300'>
-                <div class="grid-blog">
-             
-                        <?php if ($query->have_posts()): ?>
-                            <?php while ($query->have_posts()): $query->the_post(); ?>
-                                <a href="<?php echo the_permalink()?>" class="content-card">
-                                    <div class="img">
-                                        <img src="<?php the_post_thumbnail_url()?>" alt="">
-                                    </div>
+                                <div class="content-title">
 
-                                    <div class="content-title">
-                                        <h4><?php echo the_title();?></h4>
-                                        <?php
-                                                $_the_excerpt = get_the_excerpt();
-                                                $the_excerpt = substr( $_the_excerpt, 0, 200 );
-                                            ?>
-                                            
-                                        
-                                        <p><?php echo esc_html($the_excerpt); ?></p>
-                                        <small>Saiba mais</small>
-                                        
-                                    </div>
-                                </a>
-                            <?php endwhile; ?>
-                        <?php endif;?>
-                   
-                </div>
-            </div>
-        </div>
+                                    <h3><?php echo the_title(); ?></h3>
+                                    <?php
+                                    $_the_excerpt = get_the_excerpt();
+                                    $the_excerpt = substr($_the_excerpt, 0, 200);
+                                    ?>
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="content-btn">
-                    <a href="<?php echo esc_url( get_category_link( get_category_by_slug('noticias')->term_id ) ); ?>" class="btn-tertiary">Ver todos</a>
+
+                                    <!-- <p><?php echo esc_html($the_excerpt); ?></p> -->
+                                    <small>Saiba Mais</small>
+                                </div>
+                            </a>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

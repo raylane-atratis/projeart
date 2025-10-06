@@ -118,18 +118,17 @@ $('.owl-galeria-carrosel').owlCarousel({
   loop: true,
   margin: 20,
   center: true, // centraliza um item
-  nav: true, // ativa setas
-  navText: [
-        '<span class="seta-prev">&#10094;</span>', 
-        '<span class="seta-next">&#10095;</span>'
-  ],
-  dots: false, // remove bolinhas
+  nav: false, // ativa setas
+  dots: true, // remove bolinhas
   responsive: {
     0: {
       items: 1
     },
     768: {
-      items: 2
+      items: 3
+    },
+    1000: {
+      items: 5
     }
   }
 });
@@ -142,14 +141,35 @@ function prevGaleria() {
   jQuery('.owl-galeria-carrosel').trigger('prev.owl.carousel');
 }
 
+jQuery('.owl-equipe').owlCarousel({
+  loop: true,
+  margin: 20,
+  dots: true,
+  nav: false,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 2
+    },
+    800: {
+      items: 3
+    },
+    1000: {
+      items: 4
+    }
+  }
+});
+
 jQuery('.owl-clients').owlCarousel({
   loop: true,
   margin: 20,
   dots: true,
   nav: false,
-  autoplay:true,
-  autoplayTimeout:1500,
-  autoplayHoverPause:false,
+  autoplay: true,
+  autoplayTimeout: 1500,
+  autoplayHoverPause: false,
   responsive: {
     0: {
       items: 1
@@ -221,12 +241,11 @@ jQuery('.owl-marcas').owlCarousel({
   }
 });
 
-jQuery('.owl-solucoes').owlCarousel({
+jQuery('.owl-livros').owlCarousel({
   loop: false,
   margin: 20,
   dots: true,
   nav: false,
-
   responsive: {
     0: {
       items: 1
@@ -235,7 +254,25 @@ jQuery('.owl-solucoes').owlCarousel({
       items: 2
     },
     1000: {
-      items: 3
+      items: 4
+    }
+  }
+});
+
+jQuery('.owl-blog').owlCarousel({
+  loop: false,
+  margin: 20,
+  dots: true,
+  nav: false,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 2
+    },
+    1000: {
+      items: 2
     }
   }
 });
@@ -440,23 +477,23 @@ $(document).ready(function () {
 jQuery("#telefone").mask("(99) 99999-9999");
 
 document.addEventListener('DOMContentLoaded', function () {
-    const overlay = document.getElementById('popup-overlay');
-    const closeBtn = document.querySelector('.popup-close');
+  const overlay = document.getElementById('popup-overlay');
+  const closeBtn = document.querySelector('.popup-close');
 
-    if (overlay && closeBtn) {
-      // Mostra o popup automaticamente
-      overlay.style.display = 'flex';
+  if (overlay && closeBtn) {
+    // Mostra o popup automaticamente
+    overlay.style.display = 'flex';
 
-      // Fecha ao clicar no botão
-      closeBtn.addEventListener('click', function () {
+    // Fecha ao clicar no botão
+    closeBtn.addEventListener('click', function () {
+      overlay.style.display = 'none';
+    });
+
+    // Fecha ao clicar fora da área do conteúdo
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) {
         overlay.style.display = 'none';
-      });
-
-      // Fecha ao clicar fora da área do conteúdo
-      overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) {
-          overlay.style.display = 'none';
-        }
-      });
-    }
+      }
+    });
+  }
 });

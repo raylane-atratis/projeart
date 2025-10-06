@@ -13,13 +13,11 @@ $animC = get_sub_field('escolha_animacao_conteudo');
 $animI = get_sub_field('escolha_animacao_imagem');
 $classe = get_sub_field('classe');
 
+
 $titulo = get_sub_field('titulo');
 $subtitulo = get_sub_field('subtitulo');
-$lista_imagens = get_sub_field('lista_imagens');
-
 
 $direction = $posicao == 0 ? 'row-reverse' : 'row';
-
 
 // [ANIMAÇÃO CONTEÚDO]
 if ($animC == 0):
@@ -49,46 +47,64 @@ endif;
 
 
 $args = array(
-    'post_type' => 'segmentos',
-    'posts_per_page' => 6,
-    'order' => 'ASC',
+    'post_type' => 'livros',
+    'posts_per_page' => -1,
 );
 
 $query = new WP_Query($args);
 
 ?>
 
-<section class="sessaoGaleriaCarrosel <?php echo $classe; ?> <?php echo $parallax; ?> "
-    style="<?php echo $geraisCSS; ?>" <?php echo $animacao; ?>>
-
+<section class="sessaoLivros <?php echo $classe; ?> <?php echo $parallax; ?> " style="<?php echo $geraisCSS; ?>" <?php echo $animacao; ?>>
 
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="title" data-aos="fade-left" data-aos-duration='1000'>
-                    <h4 style="<?php echo $corFonte; ?>"><?php echo $subtitulo; ?></h4>
-                    <h2 style="<?php echo $corFonte; ?>"><?php echo $titulo; ?></h2>
+                <div class="title" data-aos="fade-up" data-aos-duration='1000'>
+                    <h4>
+                        <?php echo $subtitulo; ?>
+                    </h4>
+                    <h2><?php echo $titulo; ?></h2>
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-lg-12">
-                <div class="conteiner-carrosel">
-                    <div class="owl-galeria-carrosel owl-carousel owl-theme">
+                <div class="grid-sec-livros">
+                    <div class="owl-carousel owl-livros owl-theme">
+                        <?php if ($query->have_posts()): ?>
+                            <?php while ($query->have_posts()):
+                                $query->the_post(); ?>
+                                <a href="<?php echo $link_post_livro ? $link_post_livro : ''; ?>" class="item-livro">
+                                    <div class="icon-bloco">
+                                        <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
+                                    </div>
 
-                        <?php foreach ($lista_imagens as $item_img): ?>
-                            <a class="item-galeria " href="<?php echo $item_img['item_imagem']['url']; ?>"
-                                data-fancybox="gallery">
-                                <img src="<?php echo $item_img['item_imagem']['url']; ?>"
-                                    alt="<?php echo $item_img['item_imagem']['alt']; ?>">
-                            </a>
-                        <?php endforeach; ?>
+                                    <div class="content-livro">
+                                        <h3><?php echo the_title(); ?></h3>
+                                        <?php echo the_excerpt(); ?>
+                                    </div>
+                                </a>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
 
+                        <?php wp_reset_postdata(); ?>
                     </div>
                 </div>
             </div>
-
         </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="btn-container-row">
+                    <a href="<?php echo get_post_type_archive_link('livros'); ?>" class="btn-padrao">
+                        Ver todos
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </section>
