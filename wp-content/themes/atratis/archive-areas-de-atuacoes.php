@@ -1,5 +1,15 @@
 <?php get_header(); ?>
 
+<?php
+$args = array(
+    'post_type' => 'areas-de-atuacoes', // Substitua 'areas-de-atuacoes' pelo slug real do seu custom post type, se for diferente.
+    'posts_per_page' => -1, // Exibe todos os posts
+    'order' => 'ASC',
+    'orderby' => 'title'
+);
+$areas_query = new WP_Query($args);
+?>
+
 <div class="container">
     <div class="row">
 
@@ -27,11 +37,11 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="grid-areas-atuacao">
-                <?php if (have_posts()): ?>
-                    <?php while (have_posts()):
-                        the_post();
+                <?php if ($areas_query->have_posts()): ?>
+                    <?php while ($areas_query->have_posts()):
+                        $areas_query->the_post();
                         $icon_svg = get_field("svg_area_de_atuacao");
-                        ?>
+                    ?>
 
                         <a href="<?php echo the_permalink(); ?>" class="item-atuacao">
                             <div class="icon-bloco">
@@ -51,13 +61,6 @@
                     <p>Nenhum post encontrado</p>
                 <?php endif; ?>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="content-paginacao">
-            <?php if (function_exists('pagination_function'))
-                pagination_function(); ?>
         </div>
     </div>
 </div>

@@ -71,7 +71,7 @@ a {
   background: $primary;
   color: $branco;
   transition: 0.5s ease-in-out;
-  padding: 9px 21px 9px 21px;
+  padding: 9px 30px 9px 30px;
   text-decoration: none !important;
   font-family: $fontTexto;
   font-weight: 400;
@@ -167,11 +167,20 @@ a {
 .assinatura {
   float: right;
   margin: 0;
-  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 615px;
 
   @media screen and (max-width: 767px) {
     /* margin: 20px auto; */
     float: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
   }
 }
 
@@ -239,7 +248,7 @@ a {
   transform: scale(1.2);
   opacity: 0;
 
-  transition: opacity .2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 
   &.on {
     top: 0;
@@ -253,7 +262,6 @@ a {
       display: block;
     }
   }
-
 
   button.fechar_pesquisa {
     position: absolute;
@@ -303,7 +311,6 @@ a {
           text-align: center;
           font-size: 18px;
         }
-
       }
 
       span {
@@ -313,7 +320,6 @@ a {
         text-align: center;
         margin-top: 1rem;
         display: block;
-
       }
     }
   }

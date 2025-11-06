@@ -115,9 +115,9 @@ jQuery('.owl-carousel-mobile').owlCarousel({
 });
 
 $('.owl-galeria-carrosel').owlCarousel({
-  loop: true,
+  loop: false,
   margin: 20,
-  center: true, // centraliza um item
+  center: false, // centraliza um item
   nav: false, // ativa setas
   dots: true, // remove bolinhas
   responsive: {
@@ -128,7 +128,7 @@ $('.owl-galeria-carrosel').owlCarousel({
       items: 3
     },
     1000: {
-      items: 5
+      items: 4
     }
   }
 });
@@ -142,7 +142,7 @@ function prevGaleria() {
 }
 
 jQuery('.owl-equipe').owlCarousel({
-  loop: true,
+  loop: false,
   margin: 20,
   dots: true,
   nav: false,

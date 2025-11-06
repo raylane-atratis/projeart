@@ -2,6 +2,7 @@
   padding: 10px 0;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 
   font-size: 15px;
@@ -271,6 +272,10 @@
 
 aside {
   margin-left: 17px;
+
+  @media screen and (max-width: 992px) {
+    margin-left: 0;
+  }
 }
 
 .search {
@@ -408,6 +413,10 @@ aside {
 
 .single-conteudo {
   padding: 60px 0;
+
+  @media screen and (max-width: 992px) {
+    padding: 30px 15px;
+  }
 
   .single_box {
     h1 {
@@ -597,7 +606,6 @@ aside {
       }
 
       .content-equipe {
-
         h3,
         small,
         h4,
@@ -630,7 +638,7 @@ aside {
   gap: 32px;
 
   .item-livro {
-    border: 1px solid #EAEAEA;
+    border: 1px solid #eaeaea;
     border-radius: 20px;
 
     display: flex;
@@ -639,10 +647,11 @@ aside {
     padding: 22px 26px;
     text-decoration: none;
 
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     .icon-bloco {
-      img {}
+      img {
+      }
     }
 
     .content-livro {
@@ -663,7 +672,7 @@ aside {
         line-height: 29px;
         letter-spacing: 0%;
         text-align: center;
-        color: #484D51;
+        color: #484d51;
       }
     }
 
@@ -675,9 +684,13 @@ aside {
 
 .grid-certificacoes {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(202px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   padding: 60px 0;
   gap: 32px;
+
+  img {
+    width: 100%;
+  }
 }
 
 .select-personalizado {
@@ -1280,6 +1293,11 @@ iframe {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  h2,
+  p {
+    text-align: center;
+  }
 
   a {
     background: $secondary;
