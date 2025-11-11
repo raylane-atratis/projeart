@@ -6,11 +6,18 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /aguiar-advogados/
+RewriteBase /projeart/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /aguiar-advogados/index.php [L]
+RewriteRule . /projeart/index.php [L]
 </IfModule>
+
+# Aumentar limite de upload e tempo de execução
+php_value upload_max_filesize 128M
+php_value post_max_size 128M
+php_value max_execution_time 300
+php_value max_input_time 300
+
 
 # END WordPress

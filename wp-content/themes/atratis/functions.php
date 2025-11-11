@@ -60,105 +60,6 @@ if (function_exists('acf_add_options_page')) {
 
 }
 
-//Breadcrumb v1
-/* function get_breadcrumb() {
-    echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
-
-    if (is_tax() || is_category() || is_tag()) {
-        $current_term = get_queried_object();
-        $ancestors = get_ancestors($current_term->term_id, $current_term->taxonomy);
-        $ancestors = array_reverse($ancestors); // Inverta a ordem dos ancestrais
-        foreach ($ancestors as $ancestor) {
-            $ancestor_term = get_term($ancestor, $current_term->taxonomy);
-            echo "  »  ";
-            echo '<a href="'.get_term_link($ancestor_term->term_id, $current_term->taxonomy).'">'.$ancestor_term->name.'</a>';
-        }
-        echo "  »  ";
-        echo $current_term->name;
-    } elseif (is_single()) {
-        $post_type = get_post_type();
-        $post_type_obj = get_post_type_object($post_type);
-        if ($post_type != 'post') { // Se não for um post padrão, exiba o tipo de postagem
-            echo "  »  ";
-            echo '<a href="'.get_post_type_archive_link($post_type).'">'.$post_type_obj->labels->singular_name.'</a>';
-        }
-        // Exibir categorias ou taxonomias aqui, se necessário
-        echo "  »  ";
-        the_title();
-    } elseif (is_page()) {
-        echo "  »  ";
-        echo the_title();
-    } elseif (is_search()) {
-        echo "  »  Resultados da Pesquisa para... ";
-        echo '"<em>';
-        echo the_search_query();
-        echo '</em>"';
-    }elseif (is_post_type_archive()) {
-        $post_type = get_post_type();
-        $post_type_obj = get_post_type_object($post_type);
-        echo "  »  ";
-
-        echo '<p>'. $post_type_obj->labels->singular_name .'</p>';
-    }
-} */
-
-/* function get_breadcrumb() {
-    echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
-
-    if (is_tax() || is_category() || is_tag()) {
-        $current_term = get_queried_object();
-        $ancestors = get_ancestors($current_term->term_id, $current_term->taxonomy);
-        $ancestors = array_reverse($ancestors); // Inverta a ordem dos ancestrais
-        foreach ($ancestors as $ancestor) {
-            $ancestor_term = get_term($ancestor, $current_term->taxonomy);
-            echo "  »  ";
-            echo '<a href="'.get_term_link($ancestor_term->term_id, $current_term->taxonomy).'">'.$ancestor_term->name.'</a>';
-        }
-        echo "  »  ";
-        echo $current_term->name;
-    } elseif (is_single()) {
-        $post_type = get_post_type();
-        $post_type_obj = get_post_type_object($post_type);
-
-        if ($post_type != 'post') { // Se não for um post padrão, exiba o tipo de postagem
-            echo "  »  ";
-            echo '<a href="'.get_post_type_archive_link($post_type).'">'.$post_type_obj->labels->singular_name.'</a>';
-        }
-
-        // Mostrar categorias do post
-        $categories = get_the_category();
-        if ($categories) {
-            $category = $categories[0]; // Pega a primeira categoria
-            $parent = $category->category_parent;
-
-            if ($parent) {
-                $parent_category = get_category($parent);
-                echo "  »  ";
-                echo '<a href="'.get_category_link($parent_category->term_id).'">'.$parent_category->name.'</a>';
-            }
-
-            echo "  »  ";
-            echo '<a href="'.get_category_link($category->term_id).'">'.$category->name.'</a>';
-        }
-
-        echo "  »  ";
-        the_title();
-    } elseif (is_page()) {
-        echo "  »  ";
-        echo the_title();
-    } elseif (is_search()) {
-        echo "  »  Resultados da Pesquisa para... ";
-        echo '"<em>';
-        echo the_search_query();
-        echo '</em>"';
-    } elseif (is_post_type_archive()) {
-        $post_type = get_post_type();
-        $post_type_obj = get_post_type_object($post_type);
-        echo "  »  ";
-        echo '<p>'. $post_type_obj->labels->singular_name .'</p>';
-    }
-} */
-
 function get_breadcrumb()
 {
     echo '<a href="' . home_url() . '" rel="nofollow">Home</a>';
@@ -235,8 +136,6 @@ function get_breadcrumb()
         }
     }
 }
-
-
 
 //V.1 Paginação
 function pagination_function($query = null)
@@ -471,14 +370,5 @@ function enqueue_custom_scripts()
     wp_localize_script('custom-scripts', 'ajaxurl', admin_url('admin-ajax.php'));
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
-
-function add_excerpt_to_meu_cpt()
-{
-    add_post_type_support('areas-de-atuacoes', 'excerpt');
-
-    add_post_type_support('livros', 'excerpt');
-}
-add_action('init', 'add_excerpt_to_meu_cpt');
-
 
 ?>

@@ -17,9 +17,6 @@ endif;
         if (get_row_layout() == 'sessao_texto_imagem' && get_sub_field('exibir')):
             get_template_part('template-parts-blocos/sessao_texto_imagem');
 
-        elseif (get_row_layout() == 'sessao_solucoes' && get_sub_field('exibir')):
-            get_template_part('template-parts-blocos/sessao_solucoes');
-
         elseif (get_row_layout() == 'sessao_sobre' && get_sub_field('exibir')):
             get_template_part('template-parts-blocos/sessao_sobre');
 
@@ -53,32 +50,15 @@ endif;
         elseif (get_row_layout() == 'sessao_numeros' && get_sub_field('exibir')):
             get_template_part('template-parts-blocos/sessao_numeros');
 
-        elseif (get_row_layout() == 'sessao_segmentos' && get_sub_field('exibir')):
-            get_template_part('template-parts-blocos/sessao_segmentos');
-
         elseif (get_row_layout() == 'sessao_missao_valores' && get_sub_field('exibir')):
             get_template_part('template-parts-blocos/sessao_missao_valores');
 
-        elseif (get_row_layout() == 'sessao_quadro_funcionarios' && get_sub_field('exibir')):
-            get_template_part('template-parts-blocos/sessao_quadro_funcionarios');
-
-        elseif (get_row_layout() == 'sessao_certificacoes' && get_sub_field('exibir')):
-            get_template_part('template-parts-blocos/sessao_certificacoes');
 
         elseif (get_row_layout() == 'sessao_texto_video' && get_sub_field('exibir')):
             get_template_part('template-parts-blocos/sessao_texto_video');
 
         elseif (get_row_layout() == 'sessao_colunas' && get_sub_field('exibir')):
             get_template_part('template-parts-blocos/sessao_colunas');
-
-        elseif (get_row_layout() == 'sessao_livros' && get_sub_field('exibir')):
-            get_template_part('template-parts-blocos/sessao_livros');
-
-        elseif (get_row_layout() == 'sessao_areas_atuacao' && get_sub_field('exibir')):
-            get_template_part('template-parts-blocos/sessao_areas_atuacao');
-
-        elseif (get_row_layout() == 'sessao_equipe' && get_sub_field('exibir')):
-            get_template_part('template-parts-blocos/sessao_equipe');
 
         elseif (get_row_layout() == 'sessao_newsletter' && get_sub_field('exibir')):
             get_template_part('template-parts-blocos/sessao_newsletter');
