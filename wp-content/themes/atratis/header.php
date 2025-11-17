@@ -201,7 +201,7 @@
             if ($links_topo) {
                 $placeholder_class .= ' link-top-placeholder';
             } else {
-                $placeholder_style = 'height: 76px;';
+                $placeholder_style = 'height: 102px;';
             }
         }
     }
