@@ -2,20 +2,18 @@ AOS.init({
   disable: window.innerWidth < 1024,
 });
 
-
 function toggleNave() {
   const $btn = jQuery("#menuBtn");
-  const $sidenav = jQuery("#mySidenav")
+  const $sidenav = jQuery("#mySidenav");
 
-  if ($btn.hasClass('active')) {
-    $btn.removeClass('active');
-    $sidenav.css('right', '-100%');
+  if ($btn.hasClass("active")) {
+    $btn.removeClass("active");
+    $sidenav.css("right", "-100%");
   } else {
-    $btn.addClass('active');
-    $sidenav.css('right', 0);
+    $btn.addClass("active");
+    $sidenav.css("right", 0);
   }
 }
-
 
 function closeNave() {
   document.getElementById("mySidenav").style.right = "-100%";
@@ -78,43 +76,43 @@ jQuery(document).ready(function () {
   }
 });
 
-jQuery('.owl-carousel-banner').owlCarousel({
+jQuery(".owl-carousel-banner").owlCarousel({
   loop: false,
   margin: 0,
   dots: true,
   nav: false,
   responsive: {
     0: {
-      items: 1
+      items: 1,
     },
     600: {
-      items: 1
+      items: 1,
     },
     1000: {
-      items: 1
-    }
-  }
+      items: 1,
+    },
+  },
 });
 
-jQuery('.owl-carousel-mobile').owlCarousel({
+jQuery(".owl-carousel-mobile").owlCarousel({
   loop: false,
   margin: 0,
   dots: false,
   nav: false,
   responsive: {
     0: {
-      items: 1
+      items: 1,
     },
     600: {
-      items: 1
+      items: 1,
     },
     1000: {
-      items: 1
-    }
-  }
+      items: 1,
+    },
+  },
 });
 
-$('.owl-galeria-carrosel').owlCarousel({
+$(".owl-galeria-carrosel").owlCarousel({
   loop: false,
   margin: 20,
   center: false, // centraliza um item
@@ -122,47 +120,47 @@ $('.owl-galeria-carrosel').owlCarousel({
   dots: true, // remove bolinhas
   responsive: {
     0: {
-      items: 1
+      items: 1,
     },
     768: {
-      items: 3
+      items: 3,
     },
     1000: {
-      items: 4
-    }
-  }
+      items: 4,
+    },
+  },
 });
 
 function nextGaleria() {
-  jQuery('.owl-galeria-carrosel').trigger('next.owl.carousel');
+  jQuery(".owl-galeria-carrosel").trigger("next.owl.carousel");
 }
 
 function prevGaleria() {
-  jQuery('.owl-galeria-carrosel').trigger('prev.owl.carousel');
+  jQuery(".owl-galeria-carrosel").trigger("prev.owl.carousel");
 }
 
-jQuery('.owl-equipe').owlCarousel({
+jQuery(".owl-equipe").owlCarousel({
   loop: false,
   margin: 20,
   dots: true,
   nav: false,
   responsive: {
     0: {
-      items: 1
+      items: 1,
     },
     600: {
-      items: 2
+      items: 2,
     },
     800: {
-      items: 3
+      items: 3,
     },
     1000: {
-      items: 4
-    }
-  }
+      items: 4,
+    },
+  },
 });
 
-jQuery('.owl-clients').owlCarousel({
+jQuery(".owl-clients").owlCarousel({
   loop: true,
   margin: 20,
   dots: true,
@@ -172,29 +170,29 @@ jQuery('.owl-clients').owlCarousel({
   autoplayHoverPause: false,
   responsive: {
     0: {
-      items: 1
+      items: 1,
     },
     600: {
-      items: 2
+      items: 2,
     },
     800: {
-      items: 3
+      items: 3,
     },
     1000: {
-      items: 4
-    }
-  }
+      items: 4,
+    },
+  },
 });
 
 function nextMarcas() {
-  jQuery('.owl-clients').trigger('next.owl.carousel');
+  jQuery(".owl-clients").trigger("next.owl.carousel");
 }
 
 function prevMarcas() {
-  jQuery('.owl-clients').trigger('prev.owl.carousel');
+  jQuery(".owl-clients").trigger("prev.owl.carousel");
 }
 
-jQuery('.owl-segmentos').owlCarousel({
+jQuery(".owl-segmentos").owlCarousel({
   loop: false,
   margin: 20,
   dots: true,
@@ -202,82 +200,78 @@ jQuery('.owl-segmentos').owlCarousel({
   nav: false,
   responsive: {
     0: {
-      items: 1
+      items: 1,
     },
     600: {
-      items: 2
+      items: 2,
     },
     1000: {
-      items: 3
-    }
-  }
+      items: 3,
+    },
+  },
 });
 
-
-
-
-
-jQuery('.owl-marcas').owlCarousel({
+jQuery(".owl-marcas").owlCarousel({
   loop: false,
   dots: true,
   margin: 20,
   nav: false,
   responsive: {
     0: {
-      items: 1
+      items: 1,
     },
     400: {
-      items: 1
+      items: 1,
     },
     580: {
-      items: 2
+      items: 2,
     },
     800: {
-      items: 3
+      items: 3,
     },
     1000: {
-      items: 4
-    }
-  }
+      items: 4,
+    },
+  },
 });
 
-jQuery('.owl-livros').owlCarousel({
+jQuery(".owl-livros").owlCarousel({
   loop: false,
   margin: 20,
   dots: true,
   nav: false,
   responsive: {
     0: {
-      items: 1
+      items: 1,
     },
     600: {
-      items: 2
+      items: 2,
     },
     1000: {
-      items: 4
-    }
-  }
+      items: 4,
+    },
+  },
 });
 
-jQuery('.owl-blog').owlCarousel({
+jQuery(".owl-blog").owlCarousel({
   loop: false,
   margin: 20,
   dots: true,
   nav: false,
   responsive: {
     0: {
-      items: 1
+      items: 1,
     },
     600: {
-      items: 2
+      items: 2,
     },
     1000: {
-      items: 2
-    }
-  }
+      items: 2,
+    },
+  },
 });
 
-jQuery('.owl-depoimentos').owlCarousel({
+jQuery(".owl-depoimentos").owlCarousel({
   loop: false,
   margin: 0,
   dots: false,
@@ -285,49 +279,39 @@ jQuery('.owl-depoimentos').owlCarousel({
   nav: false,
   responsive: {
     0: {
-      items: 1
+      items: 1,
     },
     600: {
-      items: 2
+      items: 2,
     },
     1000: {
-      items: 3
-    }
-  }
+      items: 3,
+    },
+  },
 });
 
 function nextDepoimentos() {
-  jQuery('.owl-depoimentos').trigger('next.owl.carousel');
+  jQuery(".owl-depoimentos").trigger("next.owl.carousel");
 }
 
 function prevDepoimentos() {
-  jQuery('.owl-depoimentos').trigger('prev.owl.carousel');
+  jQuery(".owl-depoimentos").trigger("prev.owl.carousel");
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
-
   let perguntas = document.querySelectorAll(".secao-faq .pergunta");
   if (perguntas) {
-    perguntas.forEach(
-      pergunta => {
-        pergunta.addEventListener("click",
-          function () {
-            if (pergunta.classList.contains("open")) {
-              pergunta.classList.remove("open");
-            } else {
-              pergunta.classList.add("open");
-            }
-          }
-        )
-      }
-    )
+    perguntas.forEach((pergunta) => {
+      pergunta.addEventListener("click", function () {
+        if (pergunta.classList.contains("open")) {
+          pergunta.classList.remove("open");
+        } else {
+          pergunta.classList.add("open");
+        }
+      });
+    });
   }
-
 });
-
-
 
 function fecharMenu() {
   jQuery("#menufull").removeClass("aberta");
@@ -345,8 +329,7 @@ jQuery(".botao_menu").click(function () {
   if (jQuery("#menufull").hasClass("aberta")) {
     fecharMenu();
     jQuery("#corpo").removeClass("fix");
-  }
-  else {
+  } else {
     jQuery("#menufull").addClass("aberta");
     jQuery("#corpo").addClass("fix");
   }
@@ -358,21 +341,17 @@ jQuery(".fechar_section").click(function () {
   jQuery("#corpo").removeClass("fix");
 });
 
-
 jQuery(".botao_pesquisa").click(function () {
   if (jQuery("#searchfull").hasClass("aberta")) {
     fecharPesquisa();
     jQuery("#corpo").removeClass("fix");
-  }
-  else {
+  } else {
     jQuery("#searchfull").addClass("aberta");
     jQuery("#corpo").addClass("fix");
   }
 });
 
-
-document.querySelector('body').addEventListener('keydown', function (event) {
-
+document.querySelector("body").addEventListener("keydown", function (event) {
   var tecla = event.keyCode;
 
   if (tecla == 27) {
@@ -386,11 +365,7 @@ document.querySelector('body').addEventListener('keydown', function (event) {
 
     jQuery("#mascara_transparencia").css({ display: "none" });
   }
-
 });
-
-
-
 
 jQuery(".abrir_pesquisa").click(function () {
   jQuery(".pesquisa_full").addClass("on");
@@ -401,18 +376,17 @@ jQuery(".fechar_pesquisa").click(function () {
   jQuery(".pesquisa_full").removeClass("on");
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".tab-link");
   const contents = document.querySelectorAll(".tab-content");
 
-  tabs.forEach(tab => {
+  tabs.forEach((tab) => {
     tab.addEventListener("click", function () {
       const target = this.getAttribute("data-target");
 
       // remove active de todos
-      tabs.forEach(t => t.classList.remove("active"));
-      contents.forEach(c => c.classList.remove("active"));
+      tabs.forEach((t) => t.classList.remove("active"));
+      contents.forEach((c) => c.classList.remove("active"));
 
       // ativa o clicado
       this.classList.add("active");
@@ -422,7 +396,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 jQuery(document).ready(function ($) {
-  $('.numero-infos').each(function () {
+  $(".numero-infos").each(function () {
     var $this = $(this);
     var countTo = $this.text().trim(); // Obter o valor do elemento e remover espaços em branco
 
@@ -438,7 +412,7 @@ jQuery(document).ready(function ($) {
       $this.counterUp({
         delay: 10,
         time: 2000,
-        countTo: countTo // Passar o valor para o contador
+        countTo: countTo, // Passar o valor para o contador
       });
     }
   });
@@ -446,54 +420,107 @@ jQuery(document).ready(function ($) {
 
 $(document).ready(function () {
   // Ao clicar em um dropdown-toggle
-  $('.dropdown-toggle').click(function (e) {
+  $(".dropdown-toggle").click(function (e) {
     e.preventDefault();
     e.stopPropagation();
 
     var $this = $(this);
-    var $submenu = $this.next('.dropdown-menu');
+    var $submenu = $this.next(".dropdown-menu");
 
     // Fecha apenas os dropdowns que não são ancestrais do item clicado
-    $('.dropdown-menu')
-      .not($submenu.parents('.dropdown-menu'))
+    $(".dropdown-menu")
+      .not($submenu.parents(".dropdown-menu"))
       .not($submenu)
-      .removeClass('show');
+      .removeClass("show");
 
     // Alterna o submenu atual
-    $submenu.toggleClass('show');
+    $submenu.toggleClass("show");
   });
 
   // Impede que cliques dentro de qualquer dropdown fechem os menus
-  $('.dropdown-menu').click(function (e) {
+  $(".dropdown-menu").click(function (e) {
     e.stopPropagation();
   });
 
   // Clicar fora fecha todos os menus
   $(document).click(function () {
-    $('.dropdown-menu').removeClass('show');
+    $(".dropdown-menu").removeClass("show");
   });
 });
 
 jQuery("#telefone").mask("(99) 99999-9999");
 
-document.addEventListener('DOMContentLoaded', function () {
-  const overlay = document.getElementById('popup-overlay');
-  const closeBtn = document.querySelector('.popup-close');
+document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.getElementById("popup-overlay");
+  const closeBtn = document.querySelector(".popup-close");
 
   if (overlay && closeBtn) {
     // Mostra o popup automaticamente
-    overlay.style.display = 'flex';
+    overlay.style.display = "flex";
 
     // Fecha ao clicar no botão
-    closeBtn.addEventListener('click', function () {
-      overlay.style.display = 'none';
+    closeBtn.addEventListener("click", function () {
+      overlay.style.display = "none";
     });
 
     // Fecha ao clicar fora da área do conteúdo
-    overlay.addEventListener('click', function (e) {
+    overlay.addEventListener("click", function (e) {
       if (e.target === overlay) {
-        overlay.style.display = 'none';
+        overlay.style.display = "none";
       }
     });
   }
 });
+
+//carrossel de servicos projeart
+jQuery(document).ready(function($) {
+    $('.servicos-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        dots: true,
+        autoplay: false,
+        autoplayTimeout: 4500,
+        smartSpeed: 600,
+        responsive:{
+            0:{ items:1 },
+            600:{ items:2 },
+            1000:{ items:2 }
+        }
+    });
+});
+
+jQuery(document).ready(function($) {
+
+  $('.owl-clientes').owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 0,
+    autoplaySpeed: 3000,
+    autoplayHoverPause: false,
+    slideTransition: 'linear',
+
+    responsive:{
+      0:{
+        items: 3
+      },
+      480:{
+        items: 4
+      },
+      768:{
+        items: 6
+      },
+      992:{
+        items: 8
+      },
+      1200:{
+        items: 10
+      }
+    }
+  });
+
+});
+

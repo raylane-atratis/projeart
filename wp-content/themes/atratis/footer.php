@@ -1,29 +1,20 @@
 <?php
-$logo_svg = get_field('logo_svg', 'option');
-$logo_png = get_field('logo_png', 'option');
-$logo_png_branco = get_field('logo_png_branca', 'option');
-
-$background_footer = get_field('background_footer', 'option');
-$redes = get_field('redes_sociais', 'option');
-
-$descricao_footer = get_field('descricao_footer', 'option');
 
 $endereco = get_field('endereco', 'option');
 $link_endereco = get_field('link_endereco', 'option');
-$contatos_atendimento = get_field('contatos_atendimento', 'option');
+$titulo_endereco = get_field('titulo_endereco', 'option');
 
+$endereco_dois = get_field('endereco_dois', 'option');
+$link_endereco_dois = get_field('link_endereco_dois', 'option');
+$titulo_endereco_dois = get_field('titulo_endereco_dois', 'option');
+
+$acf_rodape_imagem_certificacao = get_field('acf-rodape-imagem-certificacao', 'option');
+$acf_rodape_titulo_certificacao = get_field('acf-rodape-titulo-certificacao', 'option');
+
+
+$redes_sociais = get_field('redes_sociais', 'option');
 $lista_contatos = get_field('lista_contatos', 'option');
-
-$link_de_compra_dos_produtos = get_field('link_de_compra_dos_produtos', 'option');
-
-$cnpj = get_field('cnpj', 'option');
-
-$titulo_newsletter = get_field('titulo_newsletter', 'option');
-$descricao_newsletter = get_field('descricao_newsletter', 'option');
-$texto_cta_newsletter = get_field('texto_cta_newsletter', 'option');
-$link_cta_newsletter = get_field('link_cta_newsletter', 'option');
-
-$lista_contatos_ouvidoria = get_field('lista_contatos_ouvidoria', 'option');
+$descricao_footer = get_field('descricao_footer', 'option');
 
 ?>
 
@@ -55,115 +46,145 @@ $lista_contatos_ouvidoria = get_field('lista_contatos_ouvidoria', 'option');
 
             <div class="col-lg-4">
                 <div class="coluna-dois">
-                    <h4>Endereço</h4>
-                    <div class="lista-enderecos">
-                        <div class="endereco-um">
-                            <strong>Unidade I</strong>
-                            <p>
-                                Rodovia BR 116, Km 19 • Rua Eduardo Sá, n° 465 • Bairro: Jabuti • CEP: 61.766-730 •
-                                Eusébio (CE)
-                            </p>
-                            <a href="#">
-                                > Ver mapa
-                            </a>
+                    <h4></h4>
+                    <div class="enderecos">
+                        <div class="unidades unidade-um">
+                            <div class="icon-svg">
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M2.85324 5.80019L23.0379 26.1855M2.85324 5.80019C3.60424 4.91326 4.72593 4.35019 5.97913 4.35019H12.8027M2.85324 5.80019C2.24923 6.51354 1.88501 7.43639 1.88501 8.44431V23.4561C1.88501 25.7172 3.71801 27.5502 5.97913 27.5502H20.9909C23.252 27.5502 25.085 25.7172 25.085 23.4561V17.3149M12.8027 17.3149L3.93207 26.1855M22.475 6.09019V6.00297M27.115 5.98932C27.115 9.01541 22.475 13.0502 22.475 13.0502C22.475 13.0502 17.835 9.01541 17.835 5.98932C17.835 3.48243 19.9124 1.4502 22.475 1.4502C25.0376 1.4502 27.115 3.48243 27.115 5.98932Z"
+                                        stroke="#0C7EFF" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+                            <div class="dados-unidades">
+                                <h3><?php echo $titulo_endereco; ?></h3>
+                                <p><?php echo $endereco; ?></p>
+                                <a href="<?php echo $link_endereco; ?>" target="_blank">
+
+                                    <small>> Ver mapa</small>
+                                </a>
+                            </div>
                         </div>
-                        <div class="endereco-dois">
-                            <strong>Unidade II</strong>
-                            <p>
-                                Rodovia BR 116, Km 19 • Rua Neusa Freitas de Sá, n° 100 • Dist. Industrial III • Bairro:
-                                Jabuti • CEP: 61.766–790 • Eusébio (CE)
-                            </p>
-                            <a href="#">
-                                > Ver mapa
-                            </a>
+                        <div class="unidades unidade-dois">
+                            <div class="icon-svg">
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M2.85324 5.80019L23.0379 26.1855M2.85324 5.80019C3.60424 4.91326 4.72593 4.35019 5.97913 4.35019H12.8027M2.85324 5.80019C2.24923 6.51354 1.88501 7.43639 1.88501 8.44431V23.4561C1.88501 25.7172 3.71801 27.5502 5.97913 27.5502H20.9909C23.252 27.5502 25.085 25.7172 25.085 23.4561V17.3149M12.8027 17.3149L3.93207 26.1855M22.475 6.09019V6.00297M27.115 5.98932C27.115 9.01541 22.475 13.0502 22.475 13.0502C22.475 13.0502 17.835 9.01541 17.835 5.98932C17.835 3.48243 19.9124 1.4502 22.475 1.4502C25.0376 1.4502 27.115 3.48243 27.115 5.98932Z"
+                                        stroke="#0C7EFF" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+                            <div class="dados-unidades">
+                                <h3><?php echo $titulo_endereco_dois; ?></h3>
+                                <p><?php echo $endereco_dois; ?></p>
+                                <a href="<?php echo $link_endereco_dois; ?>" target="_blank">
+                                    ><small> Ver mapa</small>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="col-lg-4">
                 <div class="coluna-tres">
-
-                    <div class="logo">
-                        <img src="<?php echo $logo_png_branco['url']; ?>" alt="<?php echo $logo_png_branco['alt']; ?>">
+                    <div class="certificao-bloco">
+                        <h4><?php echo $acf_rodape_titulo_certificacao; ?></h4>
+                        <img src="<?php echo $acf_rodape_imagem_certificacao['url']; ?>"
+                            alt="<?php echo $acf_rodape_imagem_certificacao['alt']; ?>">
                     </div>
 
                     <div class="redes-sociais">
-                        <h4>Siga-nos: </h4>
+                        <p>Siga-nos: </p>
                         <ul>
-                            <?php foreach ($redes as $item) {
-                                ?>
+                            <?php foreach ($redes_sociais as $redes_social): ?>
                                 <li>
-                                    <a href="<?php echo $item['link_icone'] ?>" target="_blank">
-                                        <?php echo $item['svg'] ?>
+                                    <a href="<?php echo $redes_social['link_icone']; ?>" target="_blank">
+                                        <?php echo $redes_social['svg']; ?>
                                     </a>
                                 </li>
-                                <?php
-                            } ?>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
 
-                    <div class="contato-footer">
-                        <h4>Telefone:</h4>
-                        <?php foreach ($lista_contatos as $item): ?>
-                            <a href="<?php echo $item['link']; ?>" class="contato-item" target="_blank">
-                                <?php echo $item['svg']; ?>
-                                <p><?php echo $item['contato']; ?></p>
-                            </a>
-                        <?php endforeach; ?>
-
+                    <div class="telefone">
+                        <a href="<?php echo $lista_contatos[0]['link']; ?>" target="_blank">Telefone:
+                            <span><?php echo $lista_contatos[0]['contato']; ?></span>
+                        </a>
                     </div>
+
                 </div>
-
-
             </div>
-        </div>
 
-    </div>
+        </div>
     </div>
 
     <div class="final">
         <div class="container">
-            <div class="row ">
-                <div class="content-final">
-                    <div class="col-5">
-                        <p>
-                            <strong>Projeart Estruturas Metálicas</strong> • <span style="font-weight: 400;">CNPJ:
-                                41.632.928/0001-76</span>
+            <div class="row">
+                <div class="col-12 content-final">
+
+                    <div class="descricao-footer">
+                        <p style="color: #1A1A37">
+                            <?php echo $descricao_footer; ?>
                         </p>
-                    </div>
-                    <div class="col-2">
-                        <div class="content-svg">
-                            <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.3667 5.2206C25.2659 5.45637 25.16 5.69213 25.0659 5.93124C24.1199 8.32235 23.1772 10.7151 22.2262 13.1046C22.0178 13.6279 21.7775 14.1396 21.5473 14.6546C21.4986 14.7633 21.428 14.8636 21.3305 15.0325C21.2364 14.8636 21.1642 14.7549 21.1138 14.6379C20.4752 13.1447 19.8283 11.6548 19.2049 10.155C18.6101 8.72867 18.0404 7.29234 17.4574 5.86102C17.3566 5.61187 17.2389 5.36942 17.0944 5.05005C16.9902 5.26575 16.9062 5.41624 16.8457 5.57509C16.5718 6.29075 16.3198 7.01644 16.0325 7.72708C15.0595 10.1316 14.0766 12.5327 13.0919 14.9322C12.9726 15.2214 12.8197 15.4973 12.6416 15.8635C12.5374 15.6829 12.4651 15.5793 12.4147 15.4656C11.9476 14.3887 11.4771 13.3136 11.0234 12.2334C10.2101 10.2988 9.40691 8.36081 8.60204 6.42284C8.48441 6.14193 8.38695 5.85266 8.26933 5.57174C8.21052 5.42961 8.12818 5.29417 8.01392 5.07346C7.94167 5.24234 7.89798 5.33598 7.85933 5.43296C6.86457 7.95114 5.91015 10.4844 4.86498 12.9808C3.80974 15.4973 2.66543 17.9771 1.55641 20.4718C1.47576 20.6524 1.36317 20.818 1.26572 20.9919L1.18506 20.9835C1.13633 20.8531 1.06239 20.7243 1.04223 20.5889C0.948132 19.9535 0.828829 19.3198 0.791862 18.681C0.72801 17.5657 0.706166 16.4471 0.847313 15.3351C1.07752 13.5209 1.55305 11.7719 2.37305 10.1332C4.72383 5.4363 8.47937 2.41482 13.5943 1.21926C18.6807 0.0303994 23.394 1.03199 27.5696 4.18892C30.3505 6.29075 32.1939 9.07981 33.2542 12.3822C33.9078 14.4172 34.0876 16.5123 33.9633 18.6325C33.9011 19.701 33.7078 20.7578 33.4172 21.7928C33.3483 22.0369 33.2743 22.2894 33.0458 22.5118C32.9567 22.3613 32.8727 22.2443 32.8139 22.1155C32.1384 20.6508 31.4461 19.1927 30.7958 17.7179C29.7675 15.3853 28.7542 13.046 27.7595 10.6984C27.1294 9.21358 26.548 7.70869 25.9363 6.21717C25.7969 5.87607 25.6204 5.54833 25.4625 5.21391C25.4305 5.21726 25.3986 5.2206 25.3667 5.22395V5.2206Z"
-                                    fill="white" />
-                                <path
-                                    d="M10.1431 19.9623C11.0656 21.8234 11.652 23.8198 12.4552 25.7394H18.1818C18.0827 25.6658 18.0255 25.6057 17.955 25.5756C17.4946 25.3716 17.1518 25.0355 16.8594 24.6392C16.0848 23.5858 15.5151 22.422 14.9808 21.2365C14.8514 20.9489 14.7405 20.6529 14.6245 20.3586C14.5893 20.2666 14.5691 20.168 14.5338 20.0392C14.6615 20.0292 14.759 20.0158 14.8564 20.0141C16.1822 20.0108 17.5097 20.0175 18.8355 20.0041C19.0925 20.0008 19.2354 20.0927 19.3278 20.3185C19.7193 21.2665 20.1226 22.2096 20.5107 23.1594C20.7914 23.8483 21.0501 24.5472 21.324 25.2395C21.3896 25.4067 21.4736 25.5672 21.5576 25.7495C23.4379 25.8565 25.3081 25.8113 27.185 25.6759C27.1481 25.6508 27.1144 25.619 27.0758 25.6023C26.4087 25.3398 25.9584 24.8465 25.6139 24.2446C25.3736 23.8232 25.1367 23.4002 24.9149 22.9687C24.5435 22.2464 24.1806 21.519 23.8227 20.79C23.6933 20.5292 23.5757 20.2599 23.6177 19.9573C23.8865 19.872 26.6574 19.8185 27.5379 19.8837C27.6017 20.0208 27.6841 20.1763 27.7496 20.3402C28.4251 22.0257 29.0956 23.7128 29.7694 25.3983C29.8231 25.5321 29.8836 25.6642 29.9542 25.8247H31.5186C31.4211 26.0638 31.3741 26.2628 31.2682 26.4216C30.9725 26.8614 30.6767 27.3045 30.3373 27.7092C28.1865 30.2742 25.5299 32.1051 22.3171 33.1167C20.4368 33.7087 18.5095 33.9344 16.5468 33.824C13.2181 33.6384 10.1767 32.6285 7.49659 30.6186C5.36929 29.0234 3.70408 27.047 2.47744 24.6944C2.21531 24.1927 2.19346 23.7296 2.41023 23.2112C2.83703 22.1929 3.23023 21.1595 3.63183 20.1295C3.70744 19.9339 3.7965 19.8135 4.04351 19.8185C6.0263 19.8653 8.00909 19.8971 9.99188 19.9356C10.0255 19.9356 10.0591 19.9456 10.1448 19.9606L10.1431 19.9623Z"
-                                    fill="white" />
-                                <path
-                                    d="M4.07324 19.1643C4.93693 16.8217 5.82079 14.5242 6.7937 12.2635C7.06927 12.312 7.10624 12.506 7.17177 12.6649C7.71956 13.9875 8.25895 15.3135 8.80841 16.6361C9.07223 17.2715 9.35116 17.9002 9.61833 18.5339C9.68723 18.6978 9.76116 18.8667 9.68891 19.0456C9.41837 19.1459 4.51349 19.2563 4.07492 19.1626L4.07324 19.1643Z"
-                                    fill="white" />
-                                <path
-                                    d="M18.7359 19.0186C18.5057 19.032 18.3041 19.0554 18.1041 19.0554C17.5496 19.0554 16.9934 19.0354 16.4389 19.0404C15.7937 19.0437 15.1484 19.0554 14.5032 19.0805C14.1352 19.0939 13.905 18.9401 13.7605 18.6107C13.6093 18.2645 13.5706 17.9268 13.7168 17.5639C14.2814 16.151 14.8325 14.7314 15.3921 13.3168C15.4912 13.066 15.6038 12.8185 15.7181 12.5744C15.7685 12.4673 15.8424 12.3704 15.9096 12.26C16.2205 12.6128 18.5864 18.2779 18.7359 19.0203V19.0186Z"
-                                    fill="white" />
-                                <path
-                                    d="M27.1896 19.2043C27.04 19.2043 26.9325 19.2043 26.8249 19.2043C25.6806 19.1859 24.538 19.1625 23.3937 19.1525C23.1971 19.1508 23.0711 19.0873 22.9921 18.9134C22.7905 18.4736 22.5603 18.0439 22.3905 17.5908C22.3217 17.4068 22.3233 17.1577 22.3855 16.9687C22.6443 16.1762 22.9266 15.392 23.2206 14.6128C23.4676 13.959 23.7382 13.3152 24.0037 12.6681C24.0625 12.5276 24.1465 12.3972 24.2255 12.2534C24.4288 12.337 24.4641 12.4992 24.5212 12.638C25.1816 14.2432 25.8386 15.8501 26.4956 17.457C26.6922 17.9369 26.8888 18.4168 27.0837 18.8967C27.1156 18.9769 27.1408 19.0605 27.1896 19.2043Z"
-                                    fill="white" />
-                            </svg>
-                        </div>
+
+
                     </div>
 
-                    <div class="col-5">
-                        <div class="assinatura">
-                            <h2>
-                                <a href="http://www.atratis.com.br" target="_blank" class="ir"
-                                    title="Site criado pela agência Atratis Digital de Fortaleza - Ceará. Inbound Marketing, Criação de Sites, Mídias Sociais e mais.">Site
-                                    criado por Atratis, uma agência de comunicação digital de Fortaleza - Ceará</a>
-                            </h2>
-                        </div>
+                    <div class="content-svg">
+                        <svg width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 0L12.7902 13.002H31.8361C31.8361 13.002 36.1229 12.7211 37.1074 15.6722C37.1074 15.6722 37.7395 17.3591 37.5288 19.2566C37.5288 19.2566 39.7225 14.2745 37.0992 8.4343C36.1088 6.22885 34.5168 4.55721 32.9189 3.33158C30.5332 1.5019 27.6453 0.448346 24.645 0.257536C24.4425 0.244659 24.2306 0.231782 24.0129 0.218905C21.825 0.0936494 0 0 0 0Z"
+                                fill="url(#paint0_linear_10043_1051)" />
+                            <path
+                                d="M36.686 16.4038C35.7027 13.4526 31.4147 13.7336 31.4147 13.7336H12.3699L9.50073 10.8164L3.3667 33.2969C5.71145 29.1834 16.1533 30.8105 16.1533 30.8105H19.273C21.4176 30.9077 23.8548 30.6174 26.1949 29.9384C27.9497 29.3578 29.8999 28.5829 31.362 27.6136C32.9213 26.6443 34.5789 24.9984 35.6511 23.1582C36.247 22.21 36.7703 21.1167 37.1086 19.9683C37.3123 18.0789 36.6848 16.4038 36.6848 16.4038H36.686Z"
+                                fill="url(#paint1_linear_10043_1051)" />
+                            <path
+                                d="M16.0316 31.523C16.0316 31.523 5.58974 29.8959 3.245 34.0094L1.67871 39.7513H13.1402L16.0328 31.523H16.0316Z"
+                                fill="url(#paint2_linear_10043_1051)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_10043_1051" x1="6.95815" y1="18.6912" x2="37.4082"
+                                    y2="-4.68481" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.41" stop-color="#1A1A37" />
+                                    <stop offset="0.44" stop-color="#18164A" />
+                                    <stop offset="0.49" stop-color="#151068" />
+                                    <stop offset="0.55" stop-color="#130B80" />
+                                    <stop offset="0.62" stop-color="#110793" />
+                                    <stop offset="0.7" stop-color="#1004A0" />
+                                    <stop offset="0.8" stop-color="#1003A7" />
+                                    <stop offset="1" stop-color="#1003AA" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_10043_1051" x1="3.3667" y1="22.0567" x2="37.1507"
+                                    y2="22.0567" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#4D4C4C" />
+                                    <stop offset="0.58" stop-color="#E6E6E6" />
+                                </linearGradient>
+                                <linearGradient id="paint2_linear_10043_1051" x1="7.11154" y1="27.07" x2="9.64476"
+                                    y2="39.5148" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.42" stop-color="#1A1A37" />
+                                    <stop offset="0.5" stop-color="#17154E" />
+                                    <stop offset="0.65" stop-color="#140D75" />
+                                    <stop offset="0.79" stop-color="#120792" />
+                                    <stop offset="0.91" stop-color="#1004A3" />
+                                    <stop offset="1" stop-color="#1003AA" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                    </div>
+
+                    <div class="assinatura">
+                        <h2>
+                            <a href="http://www.atratis.com.br" target="_blank" class="ir"
+                                title="Site criado pela agência Atratis Digital de Fortaleza - Ceará. Inbound Marketing, Criação de Sites, Mídias Sociais e mais.">Site
+                                criado por Atratis, uma agência de comunicação digital de Fortaleza - Ceará</a>
+                        </h2>
                     </div>
                 </div>
             </div>

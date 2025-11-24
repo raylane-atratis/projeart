@@ -1,3 +1,4 @@
+
 //==============================================================================
 // Mixins
 //==============================================================================
@@ -182,8 +183,8 @@ header {
           gap: 20px;
 
           li a {
-            @include social-link;
             background: $verde-rgb;
+            @include social-link;
 
             svg {
               fill: $primary;
@@ -275,8 +276,8 @@ header {
         }
 
         .busca_bt {
-          @include social-link;
           background: $secondary;
+          @include social-link;
         }
 
         ul {
@@ -287,9 +288,9 @@ header {
           gap: 20px;
 
           li a {
-            @include social-link;
             background: transparent;
             border: 1px solid $secondary;
+            @include social-link;
 
             svg {
               fill: $secondary;
@@ -446,16 +447,18 @@ header {
       }
 
       li a {
-        @include social-link;
         background: #cb9373;
         padding: 0;
+        @include social-link;
 
         svg {
           fill: $secondary;
         }
 
-        &:hover svg {
-          fill: $branco;
+        &:hover {
+          svg {
+            fill: $branco;
+          }
         }
       }
     }
@@ -597,7 +600,7 @@ header {
 
 .header-placeholder,
 .link-top-placeholder {
-  height: 92px;
+  height: 103px;
 
   @media screen and (max-width: 1200px) {
     height: 60px !important;

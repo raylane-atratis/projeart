@@ -88,34 +88,37 @@ $banQueryMob = new WP_Query($banArgs2);
 					$transparencia = "";
 				endif;
 
-				?>
+			?>
 
 
-				<div class="item" style="background-image: url('<?php echo $img_url; ?>')" <?php echo $parallax; ?>>
+				<div class="item"
+					style="background-image: linear-gradient(to bottom, #00000000, #00000000, #000000), url('<?php echo $img_url; ?>');"
+					<?php echo $parallax; ?>>
 
-					<?php if ($escolhaCorBanner): ?>
-						<div class="bg_color_imagem" style="<?php echo $camadaCorBanner; ?> <?php echo $transparencia; ?> "></div>
-					<?php endif; ?>
 
-					<div class="container">
-						<div class="row">
-							<div class="col-12 col-lg-12">
-								<div class="texto <?php echo $posConteudo; ?>" data-aos="fade-right" data-aos-duration="1000">
-									<?php if ($subtitulo_html): ?>
-										<h3>
-											<?php echo $subtitulo_html; ?>
-										</h3>
-									<?php endif; ?>
-									<?php if ($titulo): ?>
-										<h1><?php echo $titulo; ?></h1>
-									<?php endif; ?>
-									<?php if ($conteudo): ?>
-										<div>
-											<?php echo $conteudo; ?>
-										</div>
-									<?php endif; ?>
+				<?php if ($escolhaCorBanner): ?>
+					<div class="bg_color_imagem" style="<?php echo $camadaCorBanner; ?> <?php echo $transparencia; ?> "></div>
+				<?php endif; ?>
 
-									<a class="btn-padrao" href="
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-lg-12">
+							<div class="texto <?php echo $posConteudo; ?>" data-aos="fade-right" data-aos-duration="1000">
+								<?php if ($subtitulo_html): ?>
+									<h3>
+										<?php echo $subtitulo_html; ?>
+									</h3>
+								<?php endif; ?>
+								<?php if ($titulo): ?>
+									<h1><?php echo $titulo; ?></h1>
+								<?php endif; ?>
+								<?php if ($conteudo): ?>
+									<div>
+										<?php echo $conteudo; ?>
+									</div>
+								<?php endif; ?>
+
+								<a class="btn-padrao" href="
 										<?php
 										// Link do Banner
 										if ($btnLink):
@@ -124,31 +127,31 @@ $banQueryMob = new WP_Query($banArgs2);
 											echo "#";
 										endif;
 										?>" <?php
-										// Nova Aba
-										if ($btnAba == true):
-											echo "target='_blank'";
-										else:
-											echo "";
-										endif;
-										?>>
-										<?php if ($btnNome): ?>
-											<?php echo $btnNome; ?>
-										<?php else: ?>
-											Saiba mais
-										<?php endif; ?>
-									</a>
+											// Nova Aba
+											if ($btnAba == true):
+												echo "target='_blank'";
+											else:
+												echo "";
+											endif;
+											?>>
+									<?php if ($btnNome): ?>
+										<?php echo $btnNome; ?>
+									<?php else: ?>
+										Saiba mais
+									<?php endif; ?>
+								</a>
 
 
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-
-			<?php endwhile; ?>
-
 		</div>
+
+
+	<?php endwhile; ?>
+
+	</div>
 	</div>
 <?php endif; ?>
 
@@ -170,8 +173,10 @@ $banQueryMob = new WP_Query($banArgs2);
 				<div class="item">
 					<?php if ($btnLink): ?>
 						<a href="<?php echo $btnLink; ?>" <?php if ($btnAba == true):
-							   echo "target='_blank'"; else:
-							   echo ""; endif; ?>>
+																echo "target='_blank'";
+															else:
+																echo "";
+															endif; ?>>
 							<img width="100%" src="<?php echo $img_url; ?>" alt="banner">
 						</a>
 					<?php else: ?>

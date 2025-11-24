@@ -371,4 +371,16 @@ function enqueue_custom_scripts()
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
+
+// Adiciona o Owl Carousel
+wp_enqueue_script(
+  'main-js',
+  get_template_directory_uri() . '/assets/js/main.js',
+  array('jquery', 'owl-carousel'), // <- garante que o owl carregou antes
+  '1.0',
+  true
+);
+
+
 ?>
+
