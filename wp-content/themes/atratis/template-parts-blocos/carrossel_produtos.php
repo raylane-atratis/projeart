@@ -1,4 +1,4 @@
-<section class="carrossel_servicos projetos">
+<section class="carrossel_servicos">
     <div class="container">
 
         <!-- Título e Subtítulo -->
@@ -13,17 +13,17 @@
         </div>
 
         <!-- Carrossel -->
-        <div class="owl-carousel owl-theme projetos-carousel">
+        <div class="owl-carousel owl-theme produtos-carousel">
 
             <?php
-            $lista = get_sub_field('lista_projetos');
+            $lista = get_sub_field('lista_produtos');
+
             if ($lista):
                 foreach ($lista as $row):
 
-                    $imagem = $row['imagem_projetos'] ?? null;
-                    $titulo = $row['titulo_projetos'] ?? '';
-                    $subtitulo = $row['subtitulo_projetos'] ?? '';
-                    $link   = $row['link_projetos'] ?? '#';
+                    $imagem = $row['imagem_produtos'] ?? null;
+                    $titulo = $row['titulo_produtos'] ?? '';
+                    $link   = $row['link_produtos'] ?? '#';
             ?>
                     <div class="item-servico">
 
@@ -34,16 +34,11 @@
                         </a>
 
                         <?php if (!empty($titulo)): ?>
-                            <p class="titulo-projetos" style="font-weight: 700;">
+                            <p class="titulo-servico" style="font-weight: 300; font-size: 22px; max-width: 170px;">
                                 <a href="<?php echo esc_url($link); ?>">
                                     <?php echo esc_html($titulo); ?>
                                 </a>
                             </p>
-                            <?php if (!empty($subtitulo)): ?>
-                                <i class="subtitulo-projetos">
-                                    <?php echo esc_html($subtitulo); ?>
-                                </i>
-                            <?php endif; ?>
                         <?php endif; ?>
     
                     </div>

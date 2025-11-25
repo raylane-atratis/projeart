@@ -73,11 +73,9 @@
       opacity: 0.4;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.98) 100%
-      );
+      background: linear-gradient(180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.98) 100%);
     }
 
     .texto {
@@ -110,6 +108,7 @@
         color: $branco;
         margin-bottom: 6px;
         border-radius: 0 0 10px 10px;
+
         span {
           color: $primary;
         }
@@ -219,7 +218,7 @@
     height: auto;
   }
 
-  .owl-theme .owl-nav.disabled + .owl-dots {
+  .owl-theme .owl-nav.disabled+.owl-dots {
     z-index: 99;
     position: absolute;
     width: 100%;
@@ -249,7 +248,7 @@
     display: none;
   }
 
-  .owl-theme .owl-nav.disabled + .owl-dots {
+  .owl-theme .owl-nav.disabled+.owl-dots {
     z-index: 99;
     position: absolute;
     width: 100%;
@@ -429,6 +428,7 @@ footer {
         }
 
         .dados-unidades {
+
           h3,
           a,
           p {
@@ -665,6 +665,7 @@ footer {
           @include flex-center();
 
           .dados-unidades {
+
             h3,
             p,
             a {
@@ -710,6 +711,7 @@ footer {
   background-size: cover;
 
   &.fale-conosco {
+
     h2,
     p,
     a {
@@ -784,6 +786,7 @@ footer {
   }
 
   &.fontBranca {
+
     h2,
     p {
       color: $branco;
@@ -814,12 +817,10 @@ footer {
   }
 
   &.backgroundGradiente {
-    background: linear-gradient(
-      90.23deg,
-      #00aeee 0.2%,
-      #013e7e 58.18%,
-      #012d6c 103.57%
-    );
+    background: linear-gradient(90.23deg,
+        #00aeee 0.2%,
+        #013e7e 58.18%,
+        #012d6c 103.57%);
 
     h2,
     p {
@@ -1326,8 +1327,7 @@ footer {
     }
   }
 
-  .icon-svg {
-  }
+  .icon-svg {}
 
   .video-depoimento {
     width: 100%;
@@ -1535,6 +1535,7 @@ footer {
   background-position: center center;
 
   &.fontBranca {
+
     h2,
     p,
     li {
@@ -1552,12 +1553,10 @@ footer {
   }
 
   &.backgroundGradiente {
-    background: linear-gradient(
-      90.23deg,
-      #00aeee 0.2%,
-      #013e7e 58.18%,
-      #012d6c 103.57%
-    );
+    background: linear-gradient(90.23deg,
+        #00aeee 0.2%,
+        #013e7e 58.18%,
+        #012d6c 103.57%);
 
     h2,
     p,
@@ -2064,6 +2063,10 @@ footer {
   }
 }
 
+.projetos {
+  background: linear-gradient(to bottom, #fdfdff, #f1f3f9);
+}
+
 .carrossel_servicos {
   display: flex;
   justify-content: center;
@@ -2082,6 +2085,28 @@ footer {
       font-weight: 200;
       color: black;
     }
+  }
+
+  .titulo-projetos {
+    padding-top: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500 !important;
+    color: #000;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+  }
+
+  .subtitulo-projetos {
+    font-weight: 400;
+    color: #1003aa;
+    justify-content: center;
+    display: flex;
+    padding-top: 5px;
   }
 
   .titulo-servico {
@@ -2118,6 +2143,8 @@ footer {
           color: #1003aa;
         }
       }
+
+
     }
   }
 
@@ -2162,6 +2189,15 @@ footer {
       font-weight: 200;
     }
   }
+}
+
+.somos-projeart {
+  background-image: url("wp-content/themes/atratis/assets/images/mapa-projeart.png");
+}
+
+.somos-projeart img {
+  max-width: 425px;
+  width: 100%;
 }
 
 @import "internas";
