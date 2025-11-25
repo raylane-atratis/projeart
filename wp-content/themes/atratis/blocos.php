@@ -71,6 +71,9 @@ endif;
 
         elseif (get_row_layout() == 'carrossel_clientes' ):  
             get_template_part('template-parts-blocos/carrossel_clientes');
+            
+        elseif (get_row_layout() == 'carrossel_projetos' ):  
+            get_template_part('template-parts-blocos/carrossel_projetos');
 
         endif;
 

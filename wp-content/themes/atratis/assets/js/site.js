@@ -491,6 +491,23 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(document).ready(function($) {
+    $('.projetos-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        dots: true,
+        autoplay: false,
+        autoplayTimeout: 4500,
+        smartSpeed: 600,
+        responsive:{
+            0:{ items:1 },
+            600:{ items:2 },
+            1000:{ items:3 }
+        }
+    });
+});
+
+jQuery(document).ready(function($) {
 
   $('.owl-clientes').owlCarousel({
     loop: true,
