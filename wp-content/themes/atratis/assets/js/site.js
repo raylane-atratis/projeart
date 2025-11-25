@@ -558,3 +558,16 @@ jQuery(document).ready(function($) {
 
 });
 
+
+// js sessao video  
+
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("videoSessao");
+    const btn = document.getElementById("playVideo");
+
+    btn.addEventListener("click", function() {
+        video.play();
+        btn.style.display = "none";
+    });
+});
+
