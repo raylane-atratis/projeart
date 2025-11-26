@@ -510,7 +510,7 @@ jQuery(document).ready(function($) {
 jQuery(document).ready(function($) {
     $('.produtos-carousel').owlCarousel({
         loop: true,
-        margin: 20,
+        margin: 15,
         nav: false,
         dots: true,
         autoplay: false,
@@ -528,12 +528,12 @@ jQuery(document).ready(function($) {
 
   $('.owl-clientes').owlCarousel({
     loop: true,
-    margin: 30,
+    margin: 0,
     nav: false,
-    dots: false,
+    dots: true,
     autoplay: true,
-    autoplayTimeout: 0,
-    autoplaySpeed: 3000,
+    autoplayTimeout: 4500,
+    autoplaySpeed: 2000,
     autoplayHoverPause: false,
     slideTransition: 'linear',
 

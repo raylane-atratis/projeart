@@ -2166,34 +2166,11 @@ footer {
   }
 }
 
-.faixa-full {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
 
-.sessao-clientes {
-  .titulo-centro {
-    text-align: center;
-    margin: 78px 0 38px;
 
-    .titulo-sec {
-      color: #1003aa;
-      font-weight: 700;
-    }
 
-    .subtitulo {
-      font-weight: 200;
-    }
-  }
-}
 
 .somos-projeart {
-
-
 
   .numeros-home {
     display: flex;
@@ -2383,6 +2360,38 @@ footer {
     color: #fff;
     font-size: 24px;
     font-weight: 700;
+  }
+}
+
+// carrossel clientes
+.sessao-clientes {
+  .titulo-centro {
+    text-align: center;
+    padding: 71px 0 42px;
+
+    .titulo-sec {
+      color: #1003aa;
+      font-weight: 700;
+    }
+
+    .subtitulo {
+      font-weight: 200;
+    }
+  }
+
+  button {
+    padding: 9px 28px;
+    background-color: transparent;
+    border-color: #1003AA;
+    margin-bottom: 50px
+  }
+
+  .faixa-full {
+    width: 100vw;
+    margin-right: -50vw;
+  }
+  .owl-clientes .owl-item {
+    width: 200px !important;
   }
 }
 
