@@ -528,30 +528,33 @@ jQuery(document).ready(function($) {
 
   $('.owl-clientes').owlCarousel({
     loop: true,
-    margin: 0,
+    margin: 30,
     nav: false,
     dots: true,
     autoplay: true,
-    autoplayTimeout: 4500,
-    autoplaySpeed: 2000,
-    autoplayHoverPause: false,
+    autoplayTimeout: 0,
+    autoplaySpeed: 3500,
+    autoplayHoverPause: true,
     slideTransition: 'linear',
+    smartSpeed: 3500,
+    fluidSpeed: true,
+    dragEndSpeed: 350,
 
     responsive:{
       0:{
-        items: 3
+        items: 2
       },
       480:{
-        items: 4
+        items: 3
       },
       768:{
-        items: 6
+        items: 5
       },
       992:{
-        items: 8
+        items: 7
       },
       1200:{
-        items: 10
+        items: 9
       }
     }
   });

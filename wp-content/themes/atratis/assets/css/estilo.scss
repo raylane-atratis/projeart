@@ -2388,10 +2388,59 @@ footer {
 
   .faixa-full {
     width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
     margin-right: -50vw;
+    overflow: hidden;
   }
-  .owl-clientes .owl-item {
-    width: 200px !important;
+
+  .owl-clientes {
+    .owl-stage {
+      display: flex;
+      align-items: center;
+    }
+
+    .owl-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+
+      .item-cliente {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+        .thumb {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          transition: all 0.3s ease;
+
+          img {
+            max-width: 150px;
+            height: auto;
+            object-fit: contain;
+            transition: all 0.3s ease;
+          }
+
+          &:hover img {
+            opacity: 1;
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+
+    .owl-dots {
+      text-align: center;
+      margin-top: 30px;
+    }
   }
 }
 
