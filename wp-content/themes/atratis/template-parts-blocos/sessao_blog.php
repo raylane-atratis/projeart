@@ -52,65 +52,153 @@ endif;
 ?>
 
 <?php
-$args = array(
+// Buscar 1 post em destaque da categoria "eventos"
+$args_destaque = array(
     'post_type' => 'post',
-    'posts_per_page' => 6,
+    'posts_per_page' => 1,
     'tax_query' => array(
         array(
             'taxonomy' => 'category',
             'field' => 'slug',
-            'terms' => 'artigos',
-            'include_children' => true,
+            'terms' => 'eventos',
         ),
     ),
 );
 
-$query = new WP_Query($args);
+$query_destaque = new WP_Query($args_destaque);
+
+// IDs de posts já selecionados (para não repetir)
+$post_ids_excluir = array();
+if ($query_destaque->have_posts()) {
+    while ($query_destaque->have_posts()) {
+        $query_destaque->the_post();
+        $post_ids_excluir[] = get_the_ID();
+    }
+    wp_reset_postdata();
+}
+
+// Buscar 3 posts mais recentes (de todas as categorias, excluindo o post em destaque)
+$args_recentes = array(
+    'post_type' => 'post',
+    'posts_per_page' => 3,
+    'post__not_in' => $post_ids_excluir, // Excluir post em destaque
+    'orderby' => 'date',
+    'order' => 'DESC',
+);
+
+$query_recentes = new WP_Query($args_recentes);
 ?>
 
-
-
-<section class="sessaoArtigos <?php echo $classe; ?> <?php echo $parallax; ?> " style="<?php echo $geraisCSS; ?>" <?php echo $animacao; ?>>
+<section class="sessao-blog-grid <?php echo $classe; ?> <?php echo $parallax; ?> " style="<?php echo $geraisCSS; ?>" <?php echo $animacao; ?>>
 
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4" style="background: #fff;">
-                <div class="title" <?php echo $animacaoConteudo; ?>>
-                    <h4><?php echo $subtitulo; ?></h4>
-                    <h2><?php echo $titulo; ?></h2>
-                    <p><?php echo $descricao; ?></p>
-                    <a href="<?php echo esc_url(get_category_link(get_category_by_slug('artigos')->term_id)); ?>"
-                        class="btn-padrao">Ver todos</a>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="owl-carousel owl-blog owl-theme">
-                    <?php if ($query->have_posts()): ?>
-                        <?php while ($query->have_posts()):
-                            $query->the_post(); ?>
-                            <a href="<?php echo the_permalink() ?>" class="content-card">
-                                <div class="img">
-                                    <img src="<?php the_post_thumbnail_url() ?>" alt="">
-                                </div>
-
-                                <div class="content-title">
-
-                                    <h3><?php echo the_title(); ?></h3>
-                                    <?php
-                                    $_the_excerpt = get_the_excerpt();
-                                    $the_excerpt = substr($_the_excerpt, 0, 200);
-                                    ?>
-
-
-                                    <!-- <p><?php echo esc_html($the_excerpt); ?></p> -->
-                                    <small>Saiba Mais</small>
-                                </div>
-                            </a>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                </div>
-            </div>
+        <!-- Cabeçalho -->
+        <div class="blog-header" <?php echo $animacaoConteudo; ?>>
+            <?php if ($subtitulo): ?>
+                <h4><?php echo $subtitulo; ?></h4>
+            <?php endif; ?>
+            <?php if ($titulo): ?>
+                <h2><?php echo $titulo; ?></h2>
+            <?php endif; ?>
+            <?php if ($descricao): ?>
+                <p><?php echo $descricao; ?></p>
+            <?php endif; ?>
+            <?php if ($link_do_cta): ?>
+                <a href="<?php echo esc_url($link_do_cta); ?>" class="btn-padrao">Veja todas</a>
+            <?php else: ?>
+                <a href="<?php echo esc_url(home_url('/blog')); ?>" class="btn-padrao">Veja todas</a>
+            <?php endif; ?>
         </div>
+
+        <!-- Post em Destaque (categoria "eventos") -->
+        <?php if ($query_destaque->have_posts()): ?>
+            <?php
+            while ($query_destaque->have_posts()):
+                $query_destaque->the_post();
+                
+                // Pegar categorias
+                $categories = get_the_category();
+                $category_name = !empty($categories) ? $categories[0]->name : '';
+                
+                // Formatar data (ex: "20 OUT")
+                $dia = get_the_date('d');
+                $mes = get_the_date('M');
+            ?>
+                <div class="blog-post-featured" <?php echo $animacaoImagem; ?>>
+                    <a href="<?php the_permalink(); ?>" class="featured-link">
+                        <?php if (has_post_thumbnail()): ?>
+                            <div class="featured-image">
+                                <?php the_post_thumbnail('large'); ?>
+                                
+                                <!-- Overlay com informações -->
+                                <div class="featured-overlay">
+                                    <?php if ($category_name): ?>
+                                        <span class="featured-category"><?php echo esc_html($category_name); ?></span>
+                                    <?php endif; ?>
+                                    
+                                    <div class="featured-info">
+                                        <div class="featured-date">
+                                            <span class="date-day"><?php echo $dia; ?></span>
+                                            <span class="date-month"><?php echo strtoupper($mes); ?></span>
+                                        </div>
+                                        <h3 class="featured-title"><?php the_title(); ?></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </a>
+                </div>
+            <?php
+            endwhile;
+            wp_reset_postdata();
+            ?>
+        <?php endif; ?>
+
+        <!-- Grid de Posts Menores (3 posts recentes de todas as categorias) -->
+        <?php if ($query_recentes->have_posts()): ?>
+            <div class="row blog-posts-grid">
+                <?php
+                while ($query_recentes->have_posts()):
+                    $query_recentes->the_post();
+                    
+                    // Pegar categorias
+                    $categories = get_the_category();
+                    $category_name = !empty($categories) ? $categories[0]->name : '';
+                    
+                    // Formatar data (ex: "20 OUT")
+                    $dia = get_the_date('d');
+                    $mes = get_the_date('M');
+                ?>
+                    <div class="col-lg-4 col-md-6">
+                        <a href="<?php the_permalink(); ?>" class="blog-post-small">
+                            <?php if (has_post_thumbnail()): ?>
+                                <div class="small-post-image">
+                                    <?php the_post_thumbnail('medium'); ?>
+                                    
+                                    <!-- Badge de Data dentro da imagem -->
+                                    <div class="small-post-date-badge">
+                                        <span class="date-day"><?php echo $dia; ?></span>
+                                        <span class="date-month"><?php echo strtoupper($mes); ?></span>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                            
+                            <!-- Título e Categoria abaixo da imagem -->
+                            <div class="small-post-content">
+                                <h3 class="small-post-title"><?php the_title(); ?></h3>
+                                <?php if ($category_name): ?>
+                                    <span class="small-post-category"><?php echo esc_html($category_name); ?></span>
+                                <?php endif; ?>
+                            </div>
+                        </a>
+                    </div>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+                ?>
+            </div> <!-- Fecha .row -->
+        <?php endif; ?>
+
     </div>
 
 </section>
