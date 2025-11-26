@@ -262,13 +262,36 @@ $classe = get_sub_field('classe');
             style="position: relative; margin: 5% auto; padding: 0; width: 80%; max-width: 900px;">
             <span class="video-modal-close"
                 style="color: white; position: absolute; top: -40px; right: 0; font-size: 35px; font-weight: bold; cursor: pointer;">&times;</span>
+
             <div class="video-container"
-                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                <?php if ($video_url): ?>
-                    <video id="modal-video-player" src="<?php echo esc_url($video_url); ?>" controls playsinline
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></video>
-                <?php endif; ?>
-            </div>
+    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    
+    <?php if ($video_url):
+        
+        // 1. TENTA DETECTAR SE É YOUTUBE
+        $is_youtube = preg_match('/(youtube\.com|youtu\.be)\/(watch\?v=|embed\/|v\/)?([a-zA-Z0-9_-]{11})/', $video_url, $matches);
+        
+        if ($is_youtube && isset($matches[3])):
+            // Se for YouTube, extrai o ID e usa o Iframe
+            $youtube_id = $matches[3];
+            $embed_url = 'https://www.youtube.com/embed/' . $youtube_id . '?autoplay=1&rel=0';
+    ?>
+            <iframe id="modal-video-iframe"
+                src="<?php echo esc_url($embed_url); ?>"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+            </iframe>
+
+    <?php else: ?>
+            <video id="modal-video-player" src="<?php echo esc_url($video_url); ?>" controls playsinline
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></video>
+            
+    <?php endif; ?>
+    <?php endif; ?>
+    
+</div>
         </div>
     </div>
 
@@ -279,28 +302,75 @@ $classe = get_sub_field('classe');
         var modal = document.getElementById("video-modal");
         var btn = document.getElementById("open-video-modal");
         var span = document.getElementsByClassName("video-modal-close")[0];
-        var videoPlayer = document.getElementById("modal-video-player");
+        
+        // REMOVIDO: As referências globais foram movidas para dentro das funções
+        // var videoPlayer = document.getElementById("modal-video-player"); 
+        // var videoIframe = document.getElementById("modal-video-iframe"); 
+
+        // Função para parar o vídeo, independentemente do tipo
+        function stopVideo() {
+            // Tenta buscar as referências AGORA que o modal está aberto
+            var videoPlayer = document.getElementById("modal-video-player"); 
+            var videoIframe = document.getElementById("modal-video-iframe"); 
+
+            if (videoPlayer) {
+                videoPlayer.pause();
+                // Opcional: Reseta o vídeo para o início
+                videoPlayer.currentTime = 0; 
+            }
+            if (videoIframe) {
+                // Para o vídeo do YouTube limpando e resetando o SRC
+                var currentSrc = videoIframe.src;
+                // Remove autoplay para não começar automaticamente se o modal for reaberto
+                var newSrc = currentSrc.replace('autoplay=1', 'autoplay=0'); 
+                videoIframe.src = newSrc; 
+            }
+        }
+        
+        // Função para iniciar o vídeo
+        function playVideo() {
+            // Tenta buscar as referências AGORA que o modal está aberto
+            var videoPlayer = document.getElementById("modal-video-player"); 
+            var videoIframe = document.getElementById("modal-video-iframe"); 
+
+            if (videoPlayer) {
+                videoPlayer.play();
+            }
+            if (videoIframe) {
+                // Inicia o vídeo do YouTube garantindo que 'autoplay=1' está no src
+                var currentSrc = videoIframe.src;
+                if (!currentSrc.includes('autoplay=1')) {
+                    // Adiciona autoplay no final, se ainda não estiver lá
+                    videoIframe.src = currentSrc + '&autoplay=1'; 
+                } else {
+                    // Se já estiver com autoplay, recarrega para tocar
+                    videoIframe.src = videoIframe.src; 
+                }
+            }
+        }
 
         if (btn && modal) {
             btn.onclick = function (e) {
                 e.preventDefault();
                 modal.style.display = "block";
-                if (videoPlayer) videoPlayer.play();
+                playVideo(); // Chama a função para iniciar o vídeo
             }
         }
+        
         // Fechar no X
         if (span && modal) {
             span.onclick = function () {
                 modal.style.display = "none";
-                if (videoPlayer) videoPlayer.pause();
+                stopVideo();
             }
         }
+        
         // Fechar clicando fora
         if (modal) {
             window.onclick = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
-                    if (videoPlayer) videoPlayer.pause();
+                    stopVideo();
                 }
             }
         }
