@@ -1,51 +1,59 @@
 // Sessão de Blog - Layout com Post em Destaque
 .sessao-blog-grid {
-    padding: 80px 0;
+    padding: 60px 0;
 
     .blog-header {
-        text-align: center;
-        margin-bottom: 50px;
+        text-align: left;
+        margin-bottom: 40px;
+        max-width: 600px;
 
         h4 {
             font-family: "Sora";
-            background: $primary;
-            color: $branco;
+            background: transparent;
+            color: $primary;
             font-weight: 400;
-            font-size: 16px;
-            line-height: 29px;
-            margin: 0 auto 16px;
+            font-size: 18px;
+            line-height: 1.4;
+            margin: 0 0 8px;
             width: fit-content;
-            padding: 4px 12px;
-            border-radius: 30px;
+            padding: 0;
         }
 
         h2 {
             font-weight: 700;
-            font-size: 36px;
-            line-height: 1.2;
-            margin-bottom: 16px;
+            font-size: 42px;
+            line-height: 1.1;
+            margin-bottom: 12px;
             color: $primary;
+
+            @media screen and (max-width: 768px) {
+                font-size: 32px;
+            }
         }
 
         p {
-            max-width: 600px;
-            margin: 0 auto 24px;
+            max-width: 500px;
+            margin: 0 0 20px;
             font-size: 16px;
             line-height: 1.6;
+            color: #666;
         }
 
         a.btn-padrao {
             display: inline-block;
-            background: $secondary;
-            color: $branco;
-            padding: 12px 32px;
+            background: transparent;
+            color: $primary;
+            padding: 8px 24px;
             text-decoration: none;
+            border: 1px solid $primary;
             border-radius: 5px;
             font-weight: 600;
+            font-size: 14px;
             transition: all 0.3s ease;
 
             &:hover {
                 background: $primary;
+                color: $branco;
                 transform: translateY(-2px);
             }
         }
@@ -53,14 +61,14 @@
 
     // Post em Destaque (grande, no topo)
     .blog-post-featured {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
 
         .featured-link {
             display: block;
             text-decoration: none;
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 12px;
 
             &:hover {
                 .featured-image img {
@@ -72,11 +80,11 @@
         .featured-image {
             position: relative;
             width: 100%;
-            height: 500px;
+            height: 450px;
             overflow: hidden;
 
             @media screen and (max-width: 768px) {
-                height: 350px;
+                height: 300px;
             }
 
             img {
@@ -93,9 +101,9 @@
                 right: 0;
                 bottom: 0;
                 background: linear-gradient(180deg,
-                        rgba(0, 0, 0, 0.3) 0%,
+                        rgba(0, 0, 0, 0.2) 0%,
                         rgba(0, 0, 0, 0.7) 100%);
-                padding: 30px;
+                padding: 25px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -109,58 +117,61 @@
                 display: inline-block;
                 background: $primary;
                 color: $branco;
-                padding: 6px 16px;
+                padding: 6px 14px;
                 border-radius: 20px;
-                font-size: 14px;
+                font-size: 13px;
                 font-weight: 600;
+                text-transform: lowercase;
                 width: fit-content;
             }
 
             .featured-info {
                 display: flex;
                 align-items: flex-end;
-                gap: 20px;
+                gap: 18px;
 
                 @media screen and (max-width: 768px) {
                     flex-direction: column;
                     align-items: flex-start;
-                    gap: 12px;
+                    gap: 10px;
                 }
             }
 
             .featured-date {
                 background: $branco;
                 color: $primary;
-                padding: 12px 16px;
+                padding: 10px 14px;
                 border-radius: 8px;
                 text-align: center;
-                min-width: 70px;
+                min-width: 65px;
+                flex-shrink: 0;
 
                 .date-day {
                     display: block;
-                    font-size: 28px;
+                    font-size: 26px;
                     font-weight: 800;
                     line-height: 1;
                 }
 
                 .date-month {
                     display: block;
-                    font-size: 14px;
+                    font-size: 13px;
                     font-weight: 600;
-                    margin-top: 4px;
+                    margin-top: 3px;
+                    text-transform: uppercase;
                 }
             }
 
             .featured-title {
                 color: $branco;
-                font-size: 32px;
+                font-size: 28px;
                 font-weight: 700;
-                line-height: 1.2;
+                line-height: 1.3;
                 margin: 0;
                 flex: 1;
 
                 @media screen and (max-width: 768px) {
-                    font-size: 24px;
+                    font-size: 22px;
                 }
             }
         }
@@ -168,24 +179,24 @@
 
     // Grid de Posts Menores
     .blog-posts-grid {
-        margin-top: 40px;
+        margin-top: 30px;
 
         @media screen and (max-width: 991px) {
-            gap: 30px;
+            margin-top: 20px;
         }
     }
 
     .blog-post-small {
         display: block;
         text-decoration: none;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         transition: transform 0.3s ease;
 
         &:hover {
             transform: translateY(-5px);
 
             .small-post-image img {
-                transform: scale(1.1);
+                transform: scale(1.08);
             }
 
             .small-post-title {
@@ -196,10 +207,10 @@
         .small-post-image {
             position: relative;
             width: 100%;
-            height: 250px;
+            height: 220px;
             overflow: hidden;
             border-radius: 8px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
 
             @media screen and (max-width: 768px) {
                 height: 200px;
@@ -214,42 +225,43 @@
 
             .small-post-date-badge {
                 position: absolute;
-                top: 16px;
-                left: 16px;
+                top: 14px;
+                left: 14px;
                 background: $branco;
                 color: $primary;
-                padding: 10px 14px;
+                padding: 8px 12px;
                 border-radius: 6px;
                 text-align: center;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 
                 .date-day {
                     display: block;
-                    font-size: 22px;
+                    font-size: 20px;
                     font-weight: 800;
                     line-height: 1;
                 }
 
                 .date-month {
                     display: block;
-                    font-size: 12px;
+                    font-size: 11px;
                     font-weight: 600;
                     margin-top: 2px;
+                    text-transform: uppercase;
                 }
             }
         }
 
         .small-post-content {
             .small-post-title {
-                font-size: 20px;
+                font-size: 18px;
                 font-weight: 700;
                 line-height: 1.3;
                 color: #333;
-                margin: 0 0 12px;
+                margin: 0 0 10px;
                 transition: color 0.3s ease;
 
                 @media screen and (max-width: 768px) {
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
 
@@ -258,10 +270,11 @@
                 background: transparent;
                 color: $primary;
                 border: 1px solid $primary;
-                padding: 4px 12px;
-                border-radius: 15px;
-                font-size: 12px;
+                padding: 4px 10px;
+                border-radius: 12px;
+                font-size: 11px;
                 font-weight: 600;
+                text-transform: lowercase;
             }
         }
     }
