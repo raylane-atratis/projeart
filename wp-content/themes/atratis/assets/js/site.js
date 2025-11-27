@@ -506,7 +506,7 @@ jQuery(document).ready(function($) {
     loop: true,
     margin: 20,
     nav: false,
-    dots: false,
+    dots: true,
     autoplay: true,
     autoplayTimeout: 2200,
     autoplayHoverPause: false,
@@ -532,16 +532,4 @@ jQuery(document).ready(function($) {
 
 });
 
-
-// js sessao video  
-
-document.addEventListener("DOMContentLoaded", function() {
-    const video = document.getElementById("videoSessao");
-    const btn = document.getElementById("playVideo");
-
-    btn.addEventListener("click", function() {
-        video.play();
-        btn.style.display = "none";
-    });
-});
 

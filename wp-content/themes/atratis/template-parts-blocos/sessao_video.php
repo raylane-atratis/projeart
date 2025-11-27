@@ -2,20 +2,20 @@
 /////////////////////////////////////////////////////////
 // CONFIGURAÇÕES E CAMPOS
 /////////////////////////////////////////////////////////
-include "conf_gerais.php"; // Seus estilos gerais
+include "conf_gerais.php";
 
 // Campos do ACF
-$video_url = get_sub_field('video_bg'); // URL do vídeo para o Modal
-$img_fundo = get_sub_field('imagem_fundo'); // NOVO: A imagem escura de fundo (adicione esse campo no ACF ou use um existente)
+$video_url = get_sub_field('video_bg');
+$img_fundo = get_sub_field('imagem_fundo');
 if (!$img_fundo && get_sub_field('thumbnail_video')) {
-    $img_fundo = get_sub_field('thumbnail_video'); // Fallback se não tiver campo específico
+    $img_fundo = get_sub_field('thumbnail_video');
 }
 
-$titulo = get_sub_field('titulo'); // "Se é pra fazer, faça bem feito!"
-$subtitulo = get_sub_field('subtitulo'); // "Se é pra fazer, faça bem feito!"
-$cta_texto = get_sub_field('cta_texto'); // "Dê o play e conheça..."
-$cta_link_text = get_sub_field('cta_link_text'); // "mais sobre a Projeart" (parte sublinhada)
-$img3d = get_sub_field('imagem_3d'); // A foto das pessoas com capacete
+$titulo = get_sub_field('titulo');
+$subtitulo = get_sub_field('subtitulo');
+$cta_texto = get_sub_field('cta_texto');
+$cta_link_text = get_sub_field('cta_link_text');
+$img3d = get_sub_field('imagem_3d');
 
 $classe = get_sub_field('classe');
 ?>
@@ -25,20 +25,15 @@ $classe = get_sub_field('classe');
         position: relative;
         width: 100%;
         min-height: 600px;
-        /* Altura mínima para caber tudo */
         height: 80vh;
-        /* Ocupa 80% da altura da tela */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         display: flex;
         align-items: flex-end;
-        /* Alinha o conteúdo principal (pessoas/texto) no fundo */
         overflow: hidden;
-        /* Corta o que passar da borda */
     }
 
-    /* Camada escura sobre a imagem de fundo para dar leitura */
     .sessao-hero-video::before {
         content: '';
         position: absolute;
@@ -47,7 +42,6 @@ $classe = get_sub_field('classe');
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 1);
-        /* Escurece o fundo */
         z-index: 1;
     }
 
@@ -59,10 +53,8 @@ $classe = get_sub_field('classe');
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        /* Separa o Play (topo/meio) do Conteúdo (baixo) */
     }
 
-    /* Área do Play (Centralizada) */
     .play-area-center {
         flex-grow: 1;
         display: flex;
@@ -82,8 +74,6 @@ $classe = get_sub_field('classe');
         height: 118px;
         color: #fff;
         max-width: 410px;
-
-        /* Adicionado para criar um contexto de empilhamento local */
         position: relative;
         z-index: 1;
     }
@@ -113,16 +103,10 @@ $classe = get_sub_field('classe');
         line-height: 1.2;
         text-align: left;
         border: 3px solid rgba(255, 255, 255, 0.24);
-        /* Ajustei a cor para rgba padrão */
         border-radius: 60px;
-        /* Arredondar mais para combinar com a pílula */
         width: 350px;
         height: auto;
-
-        /* Espaçamento interno: Esquerda grande para não ficar embaixo do círculo */
         padding: 18px 20px 18px 70px;
-
-        /* Configuração de Camada (TRÁS) */
         position: relative;
         z-index: 1;
     }
@@ -133,38 +117,28 @@ $classe = get_sub_field('classe');
         text-decoration: underline;
     }
 
-    /* Área Inferior (Pessoas + Título) */
     .bottom-area {
         display: flex;
         align-items: flex-end;
-        /* Alinha pé das pessoas com o texto */
         padding-bottom: 0;
-        /* As pessoas encostam no chão */
         position: relative;
     }
 
-    /* Imagem 3D (Pessoas) */
     .img-people-floating {
         width: 40%;
-        /* Ajuste o tamanho das pessoas */
         max-width: 450px;
         height: auto;
         display: block;
         margin-bottom: -10px;
-        /* Leve ajuste para esconder o corte da imagem */
         margin-right: 30px;
         position: relative;
         z-index: 20;
-        /* Fica na frente de tudo */
     }
 
-    /* Caixa de Texto Lateral */
     .text-box-border {
         border: 2px solid #B5B5B5;
         border-bottom: none;
-        /* Estilo aberto embaixo igual a imagem? ou fechado */
         border-radius: 15px 15px 0 0;
-        /* Arredondado em cima */
         translate: -180px 120px;
         text-align: end;
         padding: 65px 80px 0 0;
@@ -172,7 +146,6 @@ $classe = get_sub_field('classe');
         width: 100%;
         height: 280px;
         position: relative;
-        translate: ;
         z-index: 10;
     }
 
@@ -187,7 +160,54 @@ $classe = get_sub_field('classe');
         font-weight: 800;
     }
 
-    /* Responsivo básico */
+    /* MODAL STYLES */
+    .video-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.9);
+    }
+
+    .video-modal-content {
+        position: relative;
+        margin: 5% auto;
+        padding: 0;
+        width: 80%;
+        max-width: 900px;
+    }
+
+    .video-modal-close {
+        color: white;
+        position: absolute;
+        top: -40px;
+        right: 0;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10000;
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-container iframe,
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
     @media (max-width: 768px) {
         .bottom-area {
             flex-direction: column-reverse;
@@ -197,28 +217,32 @@ $classe = get_sub_field('classe');
 
         .img-people-floating {
             margin-right: 0;
+        }
 
-            img {
-                width: 100%;
-                max-width: 500px;
-                height: auto;
-            }
+        .img-people-floating img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
         }
 
         .text-box-border {
             width: 100%;
             border: none;
             padding: 20px;
+            translate: 0 0;
+        }
+
+        .video-modal-content {
+            width: 95%;
+            margin: 10% auto;
         }
     }
 </style>
-
 
 <section class="sessao-hero-video <?php echo esc_attr($classe); ?>"
     style="background-image: url('<?php echo $img_fundo ? esc_url($img_fundo['url']) : ''; ?>'); <?php echo $geraisCSS; ?>">
 
     <div class="container hero-container">
-
         <div class="play-area-center">
             <a href="#" id="open-video-modal" class="btn-play-pill">
                 <div class="play-icon-circle">
@@ -234,7 +258,6 @@ $classe = get_sub_field('classe');
         </div>
 
         <div class="bottom-area">
-
             <div class="col-lg-5 col-md-6 d-flex align-items-end justify-content-start">
                 <div class="img-people-floating">
                     <?php if ($img3d): ?>
@@ -247,132 +270,112 @@ $classe = get_sub_field('classe');
             <div class="col-lg-7 col-md-6 d-flex ">
                 <div class="text-box-border" data-aos="fade-left">
                     <?php if ($subtitulo): ?>
-                        <h2><?php echo $subtitulo; ?></h2> <?php else: ?>
+                        <h2><?php echo $subtitulo; ?></h2> 
+                    <?php else: ?>
                         <h2>Se é pra fazer, <strong>faça bem feito!</strong></h2>
                     <?php endif; ?>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <div id="video-modal" class="video-modal"
-        style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
-        <div class="video-modal-content"
-            style="position: relative; margin: 5% auto; padding: 0; width: 80%; max-width: 900px;">
-            <span class="video-modal-close"
-                style="color: white; position: absolute; top: -40px; right: 0; font-size: 35px; font-weight: bold; cursor: pointer;">&times;</span>
+    <!-- MODAL -->
+    <div id="video-modal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <div class="video-container">
+                <?php if ($video_url):
+                    // Detecta se é YouTube
+                    $is_youtube = preg_match('/(youtube\.com|youtu\.be)\/(watch\?v=|embed\/|v\/)?([a-zA-Z0-9_-]{11})/', $video_url, $matches);
+                    
+                    if ($is_youtube && isset($matches[3])):
+                        $youtube_id = $matches[3];
+                        $embed_url = 'https://www.youtube.com/embed/' . $youtube_id;
+                ?>
+                    <iframe id="modal-video-iframe"
+                        src=""
+                        data-src="<?php echo esc_url($embed_url); ?>"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
 
-            <div class="video-container"
-    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    
-    <?php if ($video_url):
-        
-        // 1. TENTA DETECTAR SE É YOUTUBE
-        $is_youtube = preg_match('/(youtube\.com|youtu\.be)\/(watch\?v=|embed\/|v\/)?([a-zA-Z0-9_-]{11})/', $video_url, $matches);
-        
-        if ($is_youtube && isset($matches[3])):
-            // Se for YouTube, extrai o ID e usa o Iframe
-            $youtube_id = $matches[3];
-            $embed_url = 'https://www.youtube.com/embed/' . $youtube_id . '?autoplay=1&rel=0';
-    ?>
-            <iframe id="modal-video-iframe"
-                src="<?php echo esc_url($embed_url); ?>"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-            </iframe>
-
-    <?php else: ?>
-            <video id="modal-video-player" src="<?php echo esc_url($video_url); ?>" controls playsinline
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></video>
-            
-    <?php endif; ?>
-    <?php endif; ?>
-    
-</div>
+                <?php else: ?>
+                    <video id="modal-video-player" controls playsinline>
+                        <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                <?php endif; ?>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var modal = document.getElementById("video-modal");
-        var btn = document.getElementById("open-video-modal");
-        var span = document.getElementsByClassName("video-modal-close")[0];
+document.addEventListener('DOMContentLoaded', function () {
+    var modal = document.getElementById("video-modal");
+    var btn = document.getElementById("open-video-modal");
+    var closeBtn = document.querySelector(".video-modal-close");
+    
+    // Elementos de vídeo
+    var iframe = document.getElementById("modal-video-iframe");
+    var video = document.getElementById("modal-video-player");
+
+    // Abrir modal
+    btn.addEventListener("click", function(e){
+        e.preventDefault();
+        modal.style.display = "block";
         
-        // REMOVIDO: As referências globais foram movidas para dentro das funções
-        // var videoPlayer = document.getElementById("modal-video-player"); 
-        // var videoIframe = document.getElementById("modal-video-iframe"); 
-
-        // Função para parar o vídeo, independentemente do tipo
-        function stopVideo() {
-            // Tenta buscar as referências AGORA que o modal está aberto
-            var videoPlayer = document.getElementById("modal-video-player"); 
-            var videoIframe = document.getElementById("modal-video-iframe"); 
-
-            if (videoPlayer) {
-                videoPlayer.pause();
-                // Opcional: Reseta o vídeo para o início
-                videoPlayer.currentTime = 0; 
-            }
-            if (videoIframe) {
-                // Para o vídeo do YouTube limpando e resetando o SRC
-                var currentSrc = videoIframe.src;
-                // Remove autoplay para não começar automaticamente se o modal for reaberto
-                var newSrc = currentSrc.replace('autoplay=1', 'autoplay=0'); 
-                videoIframe.src = newSrc; 
-            }
+        // Iniciar o vídeo apropriado
+        if (iframe) {
+            // Para YouTube - só carrega quando abrir o modal
+            iframe.src = iframe.dataset.src + "?autoplay=1&rel=0";
         }
         
-        // Função para iniciar o vídeo
-        function playVideo() {
-            // Tenta buscar as referências AGORA que o modal está aberto
-            var videoPlayer = document.getElementById("modal-video-player"); 
-            var videoIframe = document.getElementById("modal-video-iframe"); 
-
-            if (videoPlayer) {
-                videoPlayer.play();
-            }
-            if (videoIframe) {
-                // Inicia o vídeo do YouTube garantindo que 'autoplay=1' está no src
-                var currentSrc = videoIframe.src;
-                if (!currentSrc.includes('autoplay=1')) {
-                    // Adiciona autoplay no final, se ainda não estiver lá
-                    videoIframe.src = currentSrc + '&autoplay=1'; 
-                } else {
-                    // Se já estiver com autoplay, recarrega para tocar
-                    videoIframe.src = videoIframe.src; 
-                }
-            }
-        }
-
-        if (btn && modal) {
-            btn.onclick = function (e) {
-                e.preventDefault();
-                modal.style.display = "block";
-                playVideo(); // Chama a função para iniciar o vídeo
-            }
-        }
-        
-        // Fechar no X
-        if (span && modal) {
-            span.onclick = function () {
-                modal.style.display = "none";
-                stopVideo();
-            }
-        }
-        
-        // Fechar clicando fora
-        if (modal) {
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                    stopVideo();
-                }
-            }
+        if (video) {
+            // Para vídeo MP4
+            video.play();
         }
     });
+
+    // Fechar modal
+    function closeModal() {
+        modal.style.display = "none";
+        
+        // Parar completamente os vídeos
+        if (iframe) {
+            // Para YouTube - método mais eficaz
+            iframe.src = ""; // Isso para completamente o YouTube
+        }
+        
+        if (video) {
+            // Para vídeos MP4
+            video.pause();
+            video.currentTime = 0;
+        }
+    }
+
+    // Event listeners para fechar
+    closeBtn.addEventListener("click", closeModal);
+    
+    window.addEventListener("click", function(event){
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Fechar com ESC
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
+        }
+    });
+
+    // Garantir que os vídeos parem quando a página for descarregada
+    window.addEventListener('beforeunload', function() {
+        closeModal();
+    });
+});
 </script>

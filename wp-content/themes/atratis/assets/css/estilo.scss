@@ -218,6 +218,7 @@
     height: auto;
   }
 
+
   .owl-theme .owl-nav.disabled+.owl-dots {
     z-index: 99;
     position: absolute;
@@ -1322,7 +1323,7 @@ footer {
       span {
         transition: 0.3s ease-in-out;
 
-        background: $branco !important;
+        background: $primary !important;
       }
     }
   }
