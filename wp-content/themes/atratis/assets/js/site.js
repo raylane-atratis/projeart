@@ -160,30 +160,6 @@ jQuery(".owl-equipe").owlCarousel({
   },
 });
 
-jQuery(".owl-clients").owlCarousel({
-  loop: true,
-  margin: 20,
-  dots: true,
-  nav: false,
-  autoplay: true,
-  autoplayTimeout: 1500,
-  autoplayHoverPause: false,
-  responsive: {
-    0: {
-      items: 1,
-    },
-    600: {
-      items: 2,
-    },
-    800: {
-      items: 3,
-    },
-    1000: {
-      items: 4,
-    },
-  },
-});
-
 function nextMarcas() {
   jQuery(".owl-clients").trigger("next.owl.carousel");
 }
@@ -530,16 +506,12 @@ jQuery(document).ready(function($) {
     loop: true,
     margin: 30,
     nav: false,
-    dots: true,
+    dots: false,
     autoplay: true,
-    autoplayTimeout: 0,
-    autoplaySpeed: 3500,
+    autoplayTimeout: 1500,
     autoplayHoverPause: true,
-    slideTransition: 'linear',
-    smartSpeed: 3500,
-    fluidSpeed: true,
-    dragEndSpeed: 350,
-
+    smartSpeed: 1000,
+    
     responsive:{
       0:{
         items: 2
