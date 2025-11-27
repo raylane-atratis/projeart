@@ -2382,8 +2382,22 @@ footer {
   button {
     padding: 9px 28px;
     background-color: transparent;
-    border-color: #1003AA;
-    margin-bottom: 50px
+    border-color: $primary;
+    margin-bottom: 50px;
+    background: transparent;
+    color: #1A1A37;
+    padding: 8px 28px;
+    text-decoration: none;
+    border: 1px solid $primary;
+    border-radius: 2px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $primary;
+      color: $branco;
+      border-radius: 2px;
+    }
   }
 
   .faixa-full {
@@ -2940,5 +2954,5 @@ footer {
   }
 }
 
-    @import "sessao-blog";
-    @import "internas";
+@import "sessao-blog";
+@import "internas";
