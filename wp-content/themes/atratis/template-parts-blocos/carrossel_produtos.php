@@ -1,4 +1,6 @@
-<section class="carrossel_servicos">
+<section class="carrossel_servicos" data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="500">
     <div class="container">
 
         <!-- Título e Subtítulo -->

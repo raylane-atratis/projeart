@@ -13,7 +13,8 @@
         </div>
 
         <!-- Carrossel -->
-        <div class="owl-carousel owl-theme projetos-carousel">
+        <div data-aos="fade-up"
+     data-aos-duration="1000" class="owl-carousel owl-theme projetos-carousel">
 
             <?php
             $lista = get_sub_field('lista_projetos');
