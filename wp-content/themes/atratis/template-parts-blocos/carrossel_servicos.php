@@ -2,7 +2,7 @@
     <div class="container">
 
         <!-- Título e Subtítulo -->
-        <div class="titulo-centro">
+        <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" data-aos-offset="30" class="titulo-centro">
             <?php if (get_sub_field('titulo_secao')): ?>
                 <h2><?php the_sub_field('titulo_secao'); ?></h2>
             <?php endif; ?>

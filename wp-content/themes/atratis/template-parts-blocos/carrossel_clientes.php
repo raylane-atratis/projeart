@@ -5,7 +5,8 @@ $clientes = get_sub_field('lista_clientes');
 ?>
 
 <section class="sessao-clientes ">
-    <div class="container titulo-centro align-center justify-content-center">
+    <div class="container  titulo-centro align-center justify-content-center"
+    data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300" data-aos-offset="30">
         <div class="row">
             <div class="col-12">
 
