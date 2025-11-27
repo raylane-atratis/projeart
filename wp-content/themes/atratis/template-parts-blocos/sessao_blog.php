@@ -63,7 +63,7 @@ $query_recentes = new WP_Query($args_recentes);
 <section class="sessao-blog-grid <?php echo $classe; ?>" style="<?php echo $geraisCSS; ?>" <?php echo $animacao; ?>>
     <div class="container">
 
-        <div class="row align-items-start">
+        <div class="row align-items-center">
             <!-- Cabeçalho Esquerda -->
             <div class="col-lg-4">
                 <div class="blog-header" <?php echo $animacaoConteudo; ?>>
@@ -112,7 +112,8 @@ $query_recentes = new WP_Query($args_recentes);
                             </a>
                         </div>
                     <?php endwhile;
-                    wp_reset_postdata(); endif; ?>
+                    wp_reset_postdata();
+                endif; ?>
             </div>
         </div>
 
