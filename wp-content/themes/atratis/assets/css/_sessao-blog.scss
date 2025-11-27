@@ -5,7 +5,7 @@
     .blog-header {
         text-align: left;
         margin-bottom: 40px;
-        max-width: 600px;
+        max-width: 300px;
 
         h4 {
             font-family: "Sora";
@@ -61,14 +61,16 @@
 
     // Post em Destaque (grande, no topo)
     .blog-post-featured {
-        margin-bottom: 30px;
+        margin-bottom: 4px;
+        max-width: 811px;
+        width: 100%;
 
         .featured-link {
             display: block;
             text-decoration: none;
             position: relative;
             overflow: hidden;
-            border-radius: 12px;
+            border-radius: 0;
 
             &:hover {
                 .featured-image img {
@@ -118,7 +120,6 @@
                 background: $primary;
                 color: $branco;
                 padding: 6px 14px;
-                border-radius: 20px;
                 font-size: 13px;
                 font-weight: 600;
                 text-transform: lowercase;
@@ -129,22 +130,32 @@
                 display: flex;
                 align-items: flex-end;
                 gap: 18px;
+                padding-left: 83px; // 65px width + 18px gap
 
                 @media screen and (max-width: 768px) {
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 10px;
+                    padding-left: 0;
+                    margin-bottom: 50px; // Space for the date at bottom
                 }
             }
 
             .featured-date {
-                background: $branco;
-                color: $primary;
+                position: absolute;
+                bottom: 0;
+                left: 25px;
+                background: $primary;
+                color: $branco;
                 padding: 10px 14px;
-                border-radius: 8px;
                 text-align: center;
-                min-width: 65px;
+                max-width: 65px;
+                width: 100%;
                 flex-shrink: 0;
+
+                @media screen and (max-width: 768px) {
+                    left: 20px;
+                }
 
                 .date-day {
                     display: block;
@@ -156,7 +167,7 @@
                 .date-month {
                     display: block;
                     font-size: 13px;
-                    font-weight: 600;
+                    font-weight: 300;
                     margin-top: 3px;
                     text-transform: uppercase;
                 }
@@ -179,17 +190,24 @@
 
     // Grid de Posts Menores
     .blog-posts-grid {
-        margin-top: 30px;
+        margin-top: 0;
+        margin-left: -2px;
+        margin-right: -2px;
+
+        >[class*="col-"] {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
 
         @media screen and (max-width: 991px) {
-            margin-top: 20px;
+            margin-top: 4px;
         }
     }
 
     .blog-post-small {
         display: block;
         text-decoration: none;
-        margin-bottom: 25px;
+        margin-bottom: 4px;
         transition: transform 0.3s ease;
 
         &:hover {
@@ -209,7 +227,7 @@
             width: 100%;
             height: 220px;
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 0;
             margin-bottom: 14px;
 
             @media screen and (max-width: 768px) {
@@ -225,12 +243,11 @@
 
             .small-post-date-badge {
                 position: absolute;
-                top: 14px;
+                bottom: 0;
                 left: 14px;
-                background: $branco;
-                color: $primary;
+                background: $primary;
+                color: $branco;
                 padding: 8px 12px;
-                border-radius: 6px;
                 text-align: center;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 
@@ -244,7 +261,7 @@
                 .date-month {
                     display: block;
                     font-size: 11px;
-                    font-weight: 600;
+                    font-weight: 300;
                     margin-top: 2px;
                     text-transform: uppercase;
                 }
@@ -254,9 +271,9 @@
         .small-post-content {
             .small-post-title {
                 font-size: 18px;
-                font-weight: 700;
+                font-weight: 500;
                 line-height: 1.3;
-                color: #333;
+                color: #000;
                 margin: 0 0 10px;
                 transition: color 0.3s ease;
 
@@ -267,11 +284,10 @@
 
             .small-post-category {
                 display: inline-block;
-                background: transparent;
-                color: $primary;
-                border: 1px solid $primary;
+                background: $primary;
+                color: $branco;
                 padding: 4px 10px;
-                border-radius: 12px;
+                border-radius: 6px;
                 font-size: 11px;
                 font-weight: 600;
                 text-transform: lowercase;
