@@ -176,7 +176,7 @@ class Description_Walker extends Walker_Nav_Menu
      * @param  object $item   Menu item data object.
      * @param  int $depth     Depth of menu item. May be used for padding.
      * @param  array|object $args    Additional strings. Actually always an 
-                                     instance of stdClass. But this is WordPress.
+                                     
     * @return void
     */
     function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
@@ -240,9 +240,6 @@ class Description_Walker extends Walker_Nav_Menu
             ,
             $args
         );
-
-
-        $count_pre++;
     }
 }
 
