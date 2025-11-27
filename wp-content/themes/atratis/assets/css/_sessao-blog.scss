@@ -55,12 +55,6 @@
                 color: $branco;
                 overflow: hidden;
                 border-radius: 0;
-
-                &:hover {
-                    .featured-image img {
-                        transform: scale(1.05);
-                    }
-                }
             }
         }
     }
@@ -220,20 +214,16 @@
         display: block;
         text-decoration: none;
         margin-bottom: 0;
-        transition: transform 0.3s ease;
         border: 1px solid #E6E6E6;
         padding: 5px 5px 15px;
 
         &:hover {
-            transform: translateY(-5px);
-
             .small-post-image img {
                 transform: scale(1.08);
             }
 
             .small-post-title {
                 color: $primary;
-
             }
         }
 

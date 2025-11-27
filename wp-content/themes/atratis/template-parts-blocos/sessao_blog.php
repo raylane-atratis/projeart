@@ -16,11 +16,11 @@ $subtitulo = get_sub_field('subtitulo');
 
 // Animações
 if ($animC == 0): $animacaoConteudo = "";
-elseif ($animC == 1): $animacaoConteudo = "data-aos='fade-up' data-aos-duration='1000' data-aos-delay='300'";
-elseif ($animC == 2): $animacaoConteudo = "data-aos='fade-down' data-aos-duration='1000' data-aos-delay='300'";
-elseif ($animC == 3): $animacaoConteudo = "data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300'";
+elseif ($animC == 1): $animacaoConteudo = "data-aos='fade-up' data-aos-duration='1500' data-aos-delay='300' data-aos-offset='30'";
+elseif ($animC == 2): $animacaoConteudo = "data-aos='fade-down' data-aos-duration='1500' data-aos-delay='300' data-aos-offset='30'";
+elseif ($animC == 3): $animacaoConteudo = "data-aos='fade-left' data-aos-duration='1500' data-aos-delay='300' data-aos-offset='30'";
 elseif ($animC == 4):
-    $animacaoConteudo = "data-aos='fade-right' data-aos-duration='1000' data-aos-delay='300'";
+    $animacaoConteudo = "data-aos='fade-right' data-aos-duration='1500' data-aos-delay='300' data-aos-offset='30'";
 endif;
 
 if ($animI == 0): $animacaoImagem = "";
@@ -66,7 +66,7 @@ $query_recentes = new WP_Query($args_recentes);
         <div class="row align-items-center">
             <!-- Cabeçalho Esquerda -->
             <div class="col-lg-4">
-                <div class="blog-header" <?php echo $animacaoConteudo; ?>>
+                <div class="blog-header" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="30">
                     <?php if ($subtitulo): ?>
                         <h2><?php echo $subtitulo; ?></h2><?php endif; ?>
                     <?php if ($titulo): ?>
@@ -74,9 +74,9 @@ $query_recentes = new WP_Query($args_recentes);
                     <?php if ($descricao): ?>
                         <p><?php echo $descricao; ?></p><?php endif; ?>
                     <?php if ($link_do_cta): ?>
-                        <a href="<?php echo esc_url($link_do_cta); ?>" class="btn-padrao">Veja todas</a>
+                        <a href="<?php echo esc_url($link_do_cta); ?>" class="btn-padrao" <?php echo $animacaoConteudo; ?>>Veja todas</a>
                     <?php else: ?>
-                        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="btn-padrao">Veja todas</a>
+                        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="btn-padrao" <?php echo $animacaoConteudo; ?>>Veja todas</a>
                     <?php endif; ?>
                 </div>
             </div>
