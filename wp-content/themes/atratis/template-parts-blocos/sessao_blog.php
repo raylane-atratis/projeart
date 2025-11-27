@@ -68,9 +68,9 @@ $query_recentes = new WP_Query($args_recentes);
             <div class="col-lg-4">
                 <div class="blog-header" <?php echo $animacaoConteudo; ?>>
                     <?php if ($subtitulo): ?>
-                        <h4><?php echo $subtitulo; ?></h4><?php endif; ?>
+                        <h2><?php echo $subtitulo; ?></h2><?php endif; ?>
                     <?php if ($titulo): ?>
-                        <h2><?php echo $titulo; ?></h2><?php endif; ?>
+                        <h3><?php echo $titulo; ?></h3><?php endif; ?>
                     <?php if ($descricao): ?>
                         <p><?php echo $descricao; ?></p><?php endif; ?>
                     <?php if ($link_do_cta): ?>
