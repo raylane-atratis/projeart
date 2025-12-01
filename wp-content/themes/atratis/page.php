@@ -39,4 +39,13 @@
 <!-- [BLOCOS] Chamar template de blocos -->	
 <?php get_template_part('blocos'); ?>
 
+<!-- [SHARE] Links de compartilhamento -->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <?php get_template_part('templates/share'); ?>
+        </div>
+    </div>
+</div>
+
 <?php get_footer(); ?>

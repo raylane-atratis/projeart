@@ -81,6 +81,9 @@ endif;
         elseif (get_row_layout() == 'sessao_video' ):  
             get_template_part('template-parts-blocos/sessao_video');
 
+        elseif (get_row_layout() == 'estrutura_carrossel' ):  
+            get_template_part('template-parts-blocos/estrutura_carrossel');
+
         endif;
 
     ?>

@@ -499,6 +499,22 @@ jQuery(document).ready(function($) {
         }
     });
 });
+jQuery(document).ready(function($) {
+    $('.estrutura-carousel').owlCarousel({
+        loop: true,
+        margin: 15,
+        nav: false,
+        dots: true,
+        autoplay: false,
+        autoplayTimeout: 4500,
+        smartSpeed: 600,
+        responsive:{
+            0:{ items:1 },
+            600:{ items:2 },
+            1000:{ items:4 }
+        }
+    });
+});
 
 jQuery(document).ready(function($) {
 
