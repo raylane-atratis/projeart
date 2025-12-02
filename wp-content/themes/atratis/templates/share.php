@@ -11,11 +11,39 @@ $link_email = "mailto:?subject=" . $title . "&body=" . $permalink;
 
 <div class="share-links">
   <div class="container">
+    <h2>O seu projeto merece a melhor execução!</h2>
+    <p>Tenha seu projeto desenvolvido com o padrão de qualidade Projeart. Fale com nosso time e solicite seu orçamento!
+    </p>
+
+    <div class="banner-compartilhe">
+      <div class="orcamento">
+        <h3>
+          Solicite seu orçamento
+        </h3>
+      </div>
+      <div class="orcamento-atras">
+        <h4>
+          Conte com uma equipe qualificada, que faz bem feito há mais de 30 anos.
+        </h4>
+
+        <div class="mulher-orcamento">
+          <img src="<?php echo get_template_directory_uri(); ?>/wp-content/themes/atratis/assets/images/mulher-3d.png" alt="">
+        </div>
+
+        <p>
+          Fale conosco e agende um atendimento:
+        </p>
+        <button>
+          Solicitar orçamento
+        </button>
+      </div>
+    </div>
+
 
     <h4>Compartilhe esta página:</h4>
     <div class="links">
 
-    <a target="_blank" href="<?php echo $link_email; ?>" class="email">
+      <a target="_blank" href="<?php echo $link_email; ?>" class="email">
         <svg width="35" height="28" viewBox="0 0 35 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M27.8496 27.7908H6.63086C4.87224 27.7908 3.18566 27.0922 1.94213 25.8487C0.698606 24.6052 0 22.9186 0 21.16V7.01416C0 5.25554 0.698606 3.56896 1.94213 2.32543C3.18566 1.08191 4.87224 0.383301 6.63086 0.383301H27.8496C29.6082 0.383301 31.2948 1.08191 32.5383 2.32543C33.7818 3.56896 34.4805 5.25554 34.4805 7.01416V21.16C34.4805 22.9186 33.7818 24.6052 32.5383 25.8487C31.2948 27.0922 29.6082 27.7908 27.8496 27.7908ZM6.63086 3.03564C5.57569 3.03564 4.56374 3.45481 3.81762 4.20092C3.07151 4.94704 2.65234 5.95899 2.65234 7.01416V21.16C2.65234 22.2152 3.07151 23.2271 3.81762 23.9732C4.56374 24.7193 5.57569 25.1385 6.63086 25.1385H27.8496C28.9048 25.1385 29.9167 24.7193 30.6628 23.9732C31.4089 23.2271 31.8281 22.2152 31.8281 21.16V7.01416C31.8281 5.95899 31.4089 4.94704 30.6628 4.20092C29.9167 3.45481 28.9048 3.03564 27.8496 3.03564H6.63086Z"
@@ -34,7 +62,6 @@ $link_email = "mailto:?subject=" . $title . "&body=" . $permalink;
         </svg>
         WhatsApp
       </a>
-
       <a target="_blank" href="<?php echo $link_linkedin; ?>" class="linkedin">
         <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -43,7 +70,6 @@ $link_email = "mailto:?subject=" . $title . "&body=" . $permalink;
         </svg>
         LinkedIn
       </a>
-      
     </div>
   </div>
 </div>

@@ -2,13 +2,13 @@
     <div class="container">
 
         <!-- Título e Subtítulo -->
-        <div class="titulo-centro">
+        <div style="text-align: left;" class="titulo-centro">
             <?php if (get_sub_field('titulo')): ?>
                 <h2><?php the_sub_field('titulo'); ?></h2>
             <?php endif; ?>
 
             <?php if (get_sub_field('subtitulo')): ?>
-                <h2 class="subtitulo-secao"><?php the_sub_field('subtitulo'); ?></h2>
+                <h2 class="subtitulo-secao mt-3"><?php the_sub_field('subtitulo'); ?></h2>
             <?php endif; ?>
         </div>
 
