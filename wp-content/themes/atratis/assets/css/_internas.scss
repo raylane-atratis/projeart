@@ -21,7 +21,6 @@
 }
 
 .title-internas {
-  background: #f8f8fc;
   padding: 37px 0;
   border-top: 1px solid #cad1eb;
 
@@ -655,7 +654,6 @@ aside {
 
 .share-links {
   padding: 125px 0 52px;
-
   p {
     text-align: center;
     padding-top: 16px;
@@ -753,6 +751,21 @@ aside {
     a:hover {
       transform: scale(1.1);
       border-bottom: 1px solid #1A1A37;
+    }
+  }
+}
+
+.page-id-2698 {
+  .title-internas {
+    padding-bottom: 10px;
+  }
+  .sessaoTexto{
+    padding: 0;
+  }
+  .share-links {
+    padding: 50px 0 62px;
+    .banner {
+      display: none;
     }
   }
 }

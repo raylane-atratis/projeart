@@ -11,7 +11,7 @@ $link_email = "mailto:?subject=" . $title . "&body=" . $permalink;
 ?>
 
 <div class="share-links">
-  <div class="container">
+  <div class="container banner">
     <h2 style="text-align: center;">O seu projeto merece a melhor execução!</h2>
     <p>Tenha seu projeto desenvolvido com o padrão de qualidade Projeart. Fale com nosso time e solicite seu orçamento!
     </p>
