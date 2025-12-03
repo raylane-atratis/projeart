@@ -1,11 +1,11 @@
 <style>
-    .galvanizacao-beneficios {
-        margin: 64px 0 0 0;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
-        justify-content: center;
-    }
+  .galvanizacao-beneficios {
+    margin: 64px 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    justify-content: center;
+  }
 
     img {
         max-width: 65px;
@@ -29,8 +29,8 @@
     }
 </style>
 
-<div class="container">
-    <section class="galvanizacao-beneficios">
+<div class="container"> 
+<section class="galvanizacao-beneficios">
         <?php
         $lista = get_sub_field('galvanizacao_caracteristicas');
         if ($lista):
@@ -40,20 +40,21 @@
                 $svg = $row['svg'] ?? null;
                 $titulo = $row['titulo'] ?? '';
                 $paragrafo = $row['conteudo'] ?? '';
+                $paragrafo_2 = $row['conteudo_2'] ?? '#';
                 ?>
-
-                <div class="item">
+                  
+                  <div class="item">
 
                     <?php if ($icone): ?>
-                        <img src="<?php echo $icone['url']; ?>" alt="<?php echo $icone['alt']; ?>">
-                    <?php else: ?>
-                        <span><?php echo $svg ?></span>
+                    <img src="<?php echo $icone['url']; ?>" alt="<?php echo $icone['alt']; ?>">
+                     <?php else: ?>
+                     <span><?php echo $svg ?></span>
                     <?php endif; ?>
 
                     <h3><?php echo $titulo; ?></h3>
-                    <p><?php echo $paragrafo; ?></p>
-    
-                </div>
+                    <p class="mb-4"><?php echo $paragrafo; ?></p>
+                    <p><?php echo $paragrafo_2; ?></p>
+                  </div>
 
             <?php endforeach;
         endif; ?>
