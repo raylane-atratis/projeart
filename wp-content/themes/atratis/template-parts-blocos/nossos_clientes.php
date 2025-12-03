@@ -1,6 +1,6 @@
 <style>
 .nossos-clientes {
-        margin: 34px 0 70px;
+        margin: 30px 0 50px;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 0;
@@ -13,7 +13,7 @@
 </style>
 
 <div class="container">
-    <h2><?php echo get_sub_field('titulo'); ?></h2>
+    <h2 style="text-align: center;"><?php echo get_sub_field('titulo'); ?></h2>
 </div>
 
 <div class="container">

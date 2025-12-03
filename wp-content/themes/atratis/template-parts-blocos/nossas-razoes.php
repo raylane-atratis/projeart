@@ -1,6 +1,5 @@
 <style>
 h2 {
-    text-align: center;
     color: #1003AA;
 }
 
@@ -32,7 +31,7 @@ h2 {
 </style>
 
 <div class="container">
-     <h2 style="font-weight: 700;"><?php echo get_sub_field('titulo'); ?></h2>
+     <h2 style="font-weight: 700; margin-top: 95px;     text-align: center; "><?php echo get_sub_field('titulo'); ?></h2>
 </div>
 
 <div class="container">
