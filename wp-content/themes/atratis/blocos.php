@@ -87,6 +87,12 @@ endif;
         elseif (get_row_layout() == 'galvanizacao_beneficios'):
             get_template_part('template-parts-blocos/galvanizacao_beneficios');
 
+        elseif (get_row_layout() == 'nossas-razoes'):
+            get_template_part('template-parts-blocos/nossas-razoes');
+
+        elseif (get_row_layout() == 'nossos_clientes'):
+            get_template_part('template-parts-blocos/nossos_clientes');
+
         endif;
 
     ?>

@@ -1,8 +1,8 @@
 <style>
     .galvanizacao-beneficios {
-        margin: 64px 0 0 0;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        margin: 64px 0 20px;
+        display: flex;
+        flex-wrap: wrap;
         gap: 32px;
         justify-content: center;
     }
@@ -16,6 +16,7 @@
     .item {
         width: 383px;
         padding: 38px 32px;
+        margin-bottom: 23px;
         border: 1px solid #E6E6E6;
         border-radius: 10px;
         text-align: center;
@@ -52,7 +53,7 @@
 
                     <h3><?php echo $titulo; ?></h3>
                     <p><?php echo $paragrafo; ?></p>
-    
+
                 </div>
 
             <?php endforeach;
