@@ -654,7 +654,7 @@ aside {
 }
 
 .share-links {
-  padding: 125px 0 58px;
+  padding: 125px 0 52px;
 
   p {
     text-align: center;
@@ -692,6 +692,11 @@ aside {
         text-align: left;
         max-width: 325px;
       }
+    }
+
+    .mulher-orcamento {
+      position: absolute;
+      translate: -50px -191px;
     }
 
     .fale-conosco {
@@ -734,7 +739,7 @@ aside {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 50px;
 
     a {
       display: flex;
@@ -742,6 +747,12 @@ aside {
       gap: 8px;
       color: #1A1A37;
       text-decoration: none;
+      transition: 0.2s ease-in-out;
+      padding-bottom: 8px;
+    }
+    a:hover {
+      transform: scale(1.1);
+      border-bottom: 1px solid #1A1A37;
     }
   }
 }

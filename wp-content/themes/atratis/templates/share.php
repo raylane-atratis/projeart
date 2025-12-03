@@ -7,6 +7,7 @@ $link_twitter = "https://twitter.com/intent/tweet?text=" . $title . "&url=" . $p
 $link_linkedin = "https://www.linkedin.com/shareArticle?mini=true&url=" . $permalink . "&title=" . $title;
 $link_whatsapp = "https://api.whatsapp.com/send?text=" . $title . "%20" . $permalink;
 $link_email = "mailto:?subject=" . $title . "&body=" . $permalink;
+
 ?>
 
 <div class="share-links">
@@ -36,8 +37,7 @@ $link_email = "mailto:?subject=" . $title . "&body=" . $permalink;
 
         <div class="col-lg-2">
           <div class="mulher-orcamento">
-            <img src="<?php echo get_template_directory_uri(); ?>/wp-content/themes/atratis/assets/images/mulher-3d.png"
-              alt="">
+            <img src="../wp-content/themes/atratis/assets/images/mulher-3d.png" alt="">
           </div>
         </div>
 
@@ -56,9 +56,7 @@ $link_email = "mailto:?subject=" . $title . "&body=" . $permalink;
   </div>
 
   <div class="compartilhe">
-
     <h4>Compartilhe esta página:</h4>
-
   </div>
 
   <div class="links">
