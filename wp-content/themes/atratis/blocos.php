@@ -65,24 +65,27 @@ endif;
 
         elseif (get_row_layout() == 'sessao_faca_parte' && get_sub_field('exibir')):
             get_template_part('template-parts-blocos/sessao_faca_parte');
-            
-        elseif (get_row_layout() == 'carrossel_servicos' ):  
+
+        elseif (get_row_layout() == 'carrossel_servicos'):
             get_template_part('template-parts-blocos/carrossel_servicos');
 
-        elseif (get_row_layout() == 'carrossel_clientes' ):  
+        elseif (get_row_layout() == 'carrossel_clientes'):
             get_template_part('template-parts-blocos/carrossel_clientes');
 
-        elseif (get_row_layout() == 'carrossel_projetos' ):  
+        elseif (get_row_layout() == 'carrossel_projetos'):
             get_template_part('template-parts-blocos/carrossel_projetos');
 
-        elseif (get_row_layout() == 'carrossel_produtos' ):  
+        elseif (get_row_layout() == 'carrossel_produtos'):
             get_template_part('template-parts-blocos/carrossel_produtos');
 
-        elseif (get_row_layout() == 'sessao_video' ):  
+        elseif (get_row_layout() == 'sessao_video'):
             get_template_part('template-parts-blocos/sessao_video');
 
-        elseif (get_row_layout() == 'estrutura-carrossel' ):  
+        elseif (get_row_layout() == 'estrutura-carrossel'):
             get_template_part('template-parts-blocos/estrutura-carrossel');
+
+        elseif (get_row_layout() == 'galvanizacao_beneficios'):
+            get_template_part('template-parts-blocos/galvanizacao_beneficios');
 
         endif;
 
